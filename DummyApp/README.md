@@ -1,6 +1,6 @@
 # DummyApp
 
-This projects was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
+This projects wa generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
 
 ## Development server
 
