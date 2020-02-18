@@ -1,4 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+
+class SignUpForm {
+  nome: string;
+  cognome: string;
+  login: string;
+  email: string;
+  password: string;
+
+  constructor(nome= '', cognome = '', login = '', email= '', password= '') {
+    this.nome = nome;
+    this.cognome = cognome;
+    this.login = login;
+    this.email = email;
+    this.password = password;
+  }
+}
 
 @Component({
   selector: 'app-signup',
@@ -7,9 +24,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
-  constructor() { }
+  myForm: SignUpForm = new SignUpForm();
+  myInput;
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  onSubmit(e) {
+    console.log(this.myForm);
   }
 
 }
+
+// ngOnInit(): void {
+//   this.heroForm = new FormGroup({
+//     'name': new FormControl(this.hero.name, [
+//       Validators.required,
+//       Validators.minLength(4),
+//       forbiddenNameValidator(/bob/i) // <-- Here's how you pass in the custom validator.
+//     ]),
+//     'alterEgo': new FormControl(this.hero.alterEgo),
+//     'power': new FormControl(this.hero.power, Validators.required)
+//   });
+
+// }
