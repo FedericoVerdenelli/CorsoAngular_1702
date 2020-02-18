@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   autentication() {
     alert('aperto');
-    this.authService.getAccess();
+    this.authService.getAccess('GGargani', 'gianluca');
   }
 
 }
