@@ -8,7 +8,7 @@
       style="width: 10%; border: 1px solid chocolate;"
     />
     <ul class="navbar-nav d-flex flex-row flex-grow-1">
-      <div
+      <div *ngIf="false"
         class="schermata-iniziale d-flex flex-row flex-row-reverse"
         style="width: 100%;"
       >
@@ -24,7 +24,7 @@
         </li>
       </div>
       <div
-        *ngIf="false"
+
         class="schermata-secondaria d-flex flex-row flex-grow-1"
       >
         <li class="nav-item active  p-2">
@@ -38,7 +38,7 @@
           >
         </li>
         <li class="nav-item active ml-auto p-2">
-          <a routerLink="/logout" class="nav-link" href="#"
+          <a routerLink="/login" class="nav-link" href="#"
             >Logout <span class="sr-only">(current)</span></a
           >
         </li>
