@@ -8,6 +8,7 @@ import { LoginComponent } from './views/auth/login/login.component';
 import { SignupComponent } from './views/auth/signup/signup.component';
 import { CatalogoLibriComponent } from './views/catalogo/catalogo-libri/catalogo-libri.component';
 import { DettaglioUtenteComponent } from './views/utente/dettaglio-utente/dettaglio-utente.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { DettaglioUtenteComponent } from './views/utente/dettaglio-utente/dettag
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
 
   ],
   providers: [],
