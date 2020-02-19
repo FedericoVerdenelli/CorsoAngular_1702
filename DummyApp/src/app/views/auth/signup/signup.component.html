@@ -1,85 +1,152 @@
-<div class="container marginTop" >
+<div class="container marginTop">
   <div class="row d-flex justify-content-center">
     <div class="col-lg-6 card">
-      <form class="form" novalidate (submit)="onSubmit($event)">
+      <form
+        class="form"
+        #signUpForm="ngForm"
+        (ngSubmit)="onSubmit($event)"
+      >
         <h2 class="text-center">Sign Up</h2>
         <div class="row">
           <div class="col-lg-6">
             <div class="form-group">
-              <input [(ngModel)]="myForm.nome" required
+              <input
+                for="first_name"
+                [(ngModel)]="myForm.nome"
+                required
                 type="text"
                 name="first_name"
                 #firstName="ngModel"
-                class="form-control input-lg"
+                class="form-control input-lg ng-invalid"
+                [ngClass]="{ invalido: !firstName.valid && firstName.touched }"
                 placeholder="First Name"
               />
+              <div
+                *ngIf="!firstName.valid && firstName.touched"
+                class="alert alert-danger"
+              >
+                Name is required
+              </div>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="form-group">
               <input
+                for="last_name"
+                [(ngModel)]="myForm.cognome"
+                required
                 type="text"
                 name="last_name"
-                id="last_name"
+                #lastName="ngModel"
                 class="form-control input-lg"
                 placeholder="Last Name"
+                [ngClass]="{ invalido: !lastName.valid && lastName.touched }"
               />
+              <div
+                *ngIf="!lastName.valid && lastName.touched"
+                class="alert alert-danger"
+              >
+                Last name is required
+              </div>
             </div>
           </div>
         </div>
         <div class="form-group">
           <input
+            required
+            for="login"
+            [(ngModel)]="myForm.login"
             type="text"
             name="user_name"
-            id="user_name"
+            #login="ngModel"
             class="form-control input-lg"
-            placeholder="User Name"
-            ng-model="utente.nome"
-            ng-required="true"
-            required maxlength="20"
+            placeholder="User"
+            [ngClass]="{ invalido: !login.valid && login.touched }"
+            maxlength="15"
           />
+          <div *ngIf="!login.valid && login.touched" class="alert alert-danger">
+            User is required
+          </div>
         </div>
         <div class="form-group">
           <input
+            required
+            [(ngModel)]="myForm.email"
             type="email"
             name="email"
-            id="email"
+            #email="ngModel"
             class="form-control input-lg"
             placeholder="Email Address"
+            ngModel
+            email
+            [ngClass]="{ invalido: !email.valid && email.touched }"
           />
+          <div *ngIf="!email.valid && email.touched" class="alert alert-danger">
+            Formato email errato
+          </div>
         </div>
         <div class="row">
           <div class="col-lg-6">
             <div class="form-group">
               <input
+                required
+                [(ngModel)]="myForm.password"
                 type="password"
                 name="password"
-                id="password"
+                #password="ngModel"
                 class="form-control input-lg"
                 placeholder="Password"
+                [ngClass]="{ invalido: !password.valid && password.touched }"
               />
+              <div
+                *ngIf="!password.valid && password.touched"
+                class="alert alert-danger"
+              >
+                Password is required
+              </div>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="form-group">
               <input
+                required
+                [(ngModel)]="myForm.confirmPassword"
                 type="password"
                 name="password_confirmation"
-                id="password_confirmation"
+                #confirmPassword="ngModel"
                 class="form-control input-lg"
                 placeholder="Confirm Password"
+                (click)="controllaPsw()"
+                [ngClass]="{
+                  invalido: !confirmPassword.valid && confirmPassword.touched
+                }"
               />
+              <div
+                *ngIf="!confirmPassword.valid && confirmPassword.touched"
+                class="alert alert-danger"
+              >
+                Confirm password is required
+              </div>
+              <div
+                *ngIf="errore"
+                class="alert alert-danger"
+              >
+                Le due password non coincidono
+              </div>
             </div>
           </div>
         </div>
-          <div class="col-lg-12" style="margin-bottom: 1vh;">
-            <input
-              type="submit"
-              value="Register"
-              class="btn btn-success btn-block btn-lg "
-              (click) ="onSubmit()"
-            />
-          </div>
+        <div class="col-lg-12" style="margin-bottom: 1vh;">
+          <button
+            [disabled]="!signUpForm.form.valid"
+            type="submit"
+            value="Register"
+            class="btn btn-success btn-block btn-lg"
+          >
+            Register
+          </button>
+        </div>
       </form>
     </div>
   </div>
+</div>
