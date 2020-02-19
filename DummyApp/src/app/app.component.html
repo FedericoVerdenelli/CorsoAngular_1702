@@ -5,8 +5,7 @@
     <img src="assets/logo.png" style="width: 10%;"/>
     <!-- BARRA COLORATA -->
     <ul class="navbar-nav d-flex flex-row flex-grow-1" style="background-color:rgb(40, 49, 72);">
-      <!-- OPZIONI NAVBAR PER ACCEDERE -->
-      <div *ngIf="false"  class="schermata-iniziale d-flex flex-row flex-row-reverse"
+      <div *ngIf="!autorizzato" class="schermata-iniziale d-flex flex-row flex-row-reverse"
         style="width: 100%;">
         <li class="nav-item active  p-2">
           <a routerLink="/sign-up" class="nav-link bianco" href="#">
@@ -20,20 +19,20 @@
         </li>
       </div>
       <!-- OPZIONI NAVBAR CON LOGIN EFFETTUATO -->
-      <div  class="schermata-secondaria d-flex flex-row flex-grow-1">
+      <div *ngIf="autorizzato" class="schermata-secondaria d-flex flex-row flex-grow-1" >
         <li class="nav-item active mr-auto p-2">
           <a routerLink="/libreria" class="nav-link bianco" href="#">Libreria</a>
         </li>
         <li class="nav-item active p-2">
-          <a routerLink="/profilo-utente" class="nav-link bianco" href="#">
+          <a routerLink="/profilo-utente" class="nav-link bianco" href="#" >
             <!-- FONT AWESOME -->
             <i class="fas logo fa-user-astronaut" style="margin-right: 10px;"></i>Utente
           </a>
         </li>
-        <li class="nav-item active p-2">
+        <li class="nav-item active p-2" >
           <a routerLink="/login" class="nav-link bianco" href="#">
             <!-- FONT AWESOME -->
-            <i class="fas logo fa-sign-out-alt"></i>
+            <i class="fas logo fa-sign-out-alt" (click)="servizioAcc.Logout()"></i>
           </a>
         </li>
       </div>
