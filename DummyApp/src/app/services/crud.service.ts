@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,10 @@ import { Injectable } from '@angular/core';
 })
 export class CrudService {
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
+
+  Lista() {
+    return this.httpClient.get('http://localhost:3000/libri');
+
+  }
 }

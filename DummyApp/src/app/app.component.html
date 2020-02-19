@@ -5,18 +5,22 @@
     <img src="assets/logo.png" style="width: 10%;"/>
     <!-- BARRA COLORATA -->
     <ul class="navbar-nav d-flex flex-row flex-grow-1" style="background-color:rgb(40, 49, 72);">
-      <div *ngIf="false" class="schermata-iniziale d-flex flex-row flex-row-reverse"
+      <!-- OPZIONI NAVBAR PER ACCEDERE -->
+      <div *ngIf="false"  class="schermata-iniziale d-flex flex-row flex-row-reverse"
         style="width: 100%;">
-        <!-- OPZIONI NAVBAR PER ACCEDERE -->
         <li class="nav-item active  p-2">
-          <a routerLink="/sign-up" class="nav-link bianco" href="#">Sign up</a>
+          <a routerLink="/sign-up" class="nav-link bianco" href="#">
+            <i class="fas logo fa-user-plus" style="margin-right: 10px;"></i>Sign up
+          </a>
         </li>
-        <li class="nav-item active p-2">
-          <a routerLink="/login" class="nav-link bianco" href="#">Login</a>
+        <li class="nav-item active p-2" style="margin-right: 10px;">
+          <a routerLink="/login" class="nav-link bianco" href="#">
+            <i class="fas logo fa-sign-in-alt" style="margin-right: 10px;"></i>Login
+          </a>
         </li>
       </div>
       <!-- OPZIONI NAVBAR CON LOGIN EFFETTUATO -->
-      <div class="schermata-secondaria d-flex flex-row flex-grow-1">
+      <div  class="schermata-secondaria d-flex flex-row flex-grow-1">
         <li class="nav-item active mr-auto p-2">
           <a routerLink="/libreria" class="nav-link bianco" href="#">Libreria</a>
         </li>

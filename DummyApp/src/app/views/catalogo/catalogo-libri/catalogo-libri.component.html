@@ -1,1 +1,26 @@
-<p>catalogo-libri works!</p>
+<div class="col-lg-9" style="margin: auto;">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Titolo</th>
+        <th scope="col">Autore</th>
+        <th scope="col">Trama</th>
+        <th scope="col">Prima Edizione</th>
+        <th scope="col">Inserito da</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr (click)="mostra()" style="cursor: pointer;" *ngFor="let libro of listaLibri">
+        <th scope="row">{{libro.id}}</th>
+        <td>{{libro.titolo}}</td>
+        <td>{{libro.autore}}</td>
+        <td *ngIf="menu">Clicca per leggere la trama</td>
+        <td *ngIf="trama">{{libro.trama}}</td>
+        <td>{{libro.primaEdizione}}</td>
+        <td>{{libro.creatore}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

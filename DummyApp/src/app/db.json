@@ -43,6 +43,7 @@
   ],
   "libri": [
     {
+      "id": 0,
       "titolo": "Dagon",
       "autore": "H.P. Lovecraft",
       "trama": "Prima di gettarsi dalla finestra della propria soffitta, il protagonista scrive di getto alcuni appunti sul suo stato mentale (ha finito tra l'altro la propria morfina, «la sola [cosa] che renda la [sua] vita sopportabile», e i mezzi di sostentamento), ricordando un'avventura occorsagli all'inizio della prima guerra mondiale. Fatto prigioniero da una nave tedesca nell'Oceano Pacifico, dopo soli cinque giorni riesce a fuggire, portando con sé pochi viveri su di una scialuppa; vaga alla deriva nel mare finché un pomeriggio, dopo essersi addormentato, si risveglia arenato su una sorta di isola dal terreno fangoso, grigio, ricoperto di pesci morti ed in putrefazione. L'uomo ipotizza che la causa della comparsa della terra, che non aveva mai notato in precedenza all'orizzonte, sia l'eruzione subitanea di un vulcano sottomarino; rimane qualche tempo presso la propria imbarcazione, quindi si decide a lasciarla per esplorare il territorio circostante. Dopo giorni di cammino arriva ad un crepaccio, al cui interno si trova acqua oceanica nella quale si specchia la Luna; sul versante opposto al suo si trova un enorme monolito decorato con bassorilievi a tema subacqueo. Mentre è teso in osservazione del monumento, la sua attenzione viene catturata da un gigantesco vortice marino dal quale, con sommo orrore dell'uomo, fuoriescono due arti titanici, seguiti da un altrettanto ciclopico corpo squamoso e viscido, ad abbracciare la pietra del monolito. A questo punto, ridendo come un folle, e correndo ed urlando, il protagonista scappa a tutta velocità risalendo il pendio verso la propria barca, presso la quale presumibilmente sviene, dato che si risveglia in una stanza d'ospedale a San Francisco.",
@@ -50,6 +51,7 @@
       "creatore": "user"
     },
     {
+      "id":1,
       "titolo": "Il codice da Vinci",
       "autore": "Dan Brown",
       "trama": "A Parigi, il curatore del Louvre, Jacques Saunière, viene ucciso per mano di uno strano monaco albino appartenente all'Opus Dei. Lo studioso di simbologia, il professor Robert Langdon, viene a sapere dell'omicidio e, condotto al Louvre, viene interrogato, poiché ritenuto colpevole della morte del curatore. Langdon, affiancato da Sophie Neveu, nipote del curatore ucciso, e successivamente anche dallo studioso sir Leigh Teabing, dovrà ripercorrere attraverso indizi nascosti in importanti opere d'arte, enigmi e misteriosi artefatti, il percorso del Santo Graal, uno dei più grandi misteri della storia. Tale percorso si incrocia con quello di un'antica e misteriosa società segreta nota come Priorato di Sion di cui Saunière faceva parte come Gran Maestro (livello più elevato), che nasconde un inconcepibile segreto che, se rivelato, potrebbe compromettere i fondamenti stessi del Cristianesimo, nella versione tramandata dalla Chiesa cattolica.",
