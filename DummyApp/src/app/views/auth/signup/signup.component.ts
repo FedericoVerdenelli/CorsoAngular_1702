@@ -1,7 +1,8 @@
+import { AuthService } from './../../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
-class SignUpForm {
+export class SignUpForm {
   nome: string;
   cognome: string;
   login: string;
@@ -26,12 +27,12 @@ export class SignupComponent implements OnInit {
 
   myForm: SignUpForm = new SignUpForm();
   myInput;
-  constructor() {}
+  constructor(private authServ: AuthService) {}
 
   ngOnInit() {}
 
   onSubmit(e) {
-    console.log(this.myForm);
+    this.authServ.getRegistered(this.myForm);
   }
 
 }
