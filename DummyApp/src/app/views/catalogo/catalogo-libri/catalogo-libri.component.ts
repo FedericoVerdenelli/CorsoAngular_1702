@@ -26,4 +26,7 @@ export class CatalogoLibriComponent implements OnInit {
   mostra(libro) {
     libro.aperto = !libro.aperto;
   }
+  modifica(libro) {
+    alert(libro.id);
+  }
 }
