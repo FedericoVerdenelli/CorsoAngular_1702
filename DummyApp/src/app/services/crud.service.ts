@@ -11,6 +11,8 @@ export class CrudService {
 
   Lista(): Observable<any> {
     return this.httpClient.get('http://localhost:3000/libri');
-
   }
+  // Modifica() {
+  //   this.httpClient.put('http://localhost:3000/libri');
+  // }
 }
