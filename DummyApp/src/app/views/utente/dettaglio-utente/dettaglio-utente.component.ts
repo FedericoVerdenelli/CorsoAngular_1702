@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 export class UtenteForm {
   nome: string;
   cognome: string;
@@ -7,8 +8,25 @@ export class UtenteForm {
   email: string;
   password: string;
   confirmPassword: string;
-}
 
+  constructor(
+    nome = '',
+    cognome = '',
+    login = '',
+    email = '',
+    password = '',
+    confirmPassword = ''
+  ) {
+    this.nome = nome;
+    this.cognome = cognome;
+    this.login = login;
+    this.email = email;
+    this.password = password;
+    this.confirmPassword = confirmPassword;
+  }
+
+
+}
 
 @Component({
   selector: 'app-dettaglio-utente',
@@ -17,15 +35,18 @@ export class UtenteForm {
 })
 export class DettaglioUtenteComponent implements OnInit {
 
-  utenteForm;
+  utenteForm: UtenteForm = new UtenteForm();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  salvaForm(){
+  salvaForm() {
 
   }
 
+  prova() {
+
+  }
 }

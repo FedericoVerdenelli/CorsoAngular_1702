@@ -117,9 +117,7 @@
                 class="form-control input-lg"
                 placeholder="Confirm Password"
                 (change)="controllaPsw()"
-                [ngClass]="{
-                  invalido: !confirmPassword.valid && confirmPassword.touched
-                }"
+                [ngClass]="{invalido: !confirmPassword.valid && confirmPassword.touched}"
               />
               <div
                 *ngIf="!confirmPassword.valid && confirmPassword.touched"
@@ -128,7 +126,7 @@
                 Confirm password is required
               </div>
               <div
-                *ngIf="errore"
+                *ngIf="!errore"
                 class="alert alert-danger"
               >
                 Le due password non coincidono
@@ -142,6 +140,7 @@
             type="submit"
             value="Register"
             class="btn btn-success btn-block btn-lg"
+            [ngClass]="{manina: !signUpForm.form.valid}"
           >
             Register
           </button>
