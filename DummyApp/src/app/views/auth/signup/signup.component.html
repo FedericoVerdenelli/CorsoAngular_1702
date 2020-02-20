@@ -1,6 +1,6 @@
 <div class="container marginTop">
   <div class="row d-flex justify-content-center">
-    <div class="col-lg-6 card">
+    <div class="col-lg-6 card" style="background-color: whitesmoke;">
       <form
         class="form"
         #signUpForm="ngForm"
@@ -116,7 +116,7 @@
                 #confirmPassword="ngModel"
                 class="form-control input-lg"
                 placeholder="Confirm Password"
-                (click)="controllaPsw()"
+                (change)="controllaPsw()"
                 [ngClass]="{
                   invalido: !confirmPassword.valid && confirmPassword.touched
                 }"

@@ -70,5 +70,14 @@ export class SignupComponent implements OnInit {
     }
   }
 
-  controllaPsw(group: FormGroup) {}
+  controllaPsw(group: FormGroup) {
+    console.log('zzzz', this.myForm.password)
+    console.log('zzzz', this.myForm.confirmPassword)
+
+    if (this.myForm.password === this.myForm.confirmPassword) {
+      this.authServ.getRegistered(this.myForm);
+    } else {
+      this.errore = true;
+    }
+  }
 }

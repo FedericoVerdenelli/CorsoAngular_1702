@@ -15,13 +15,15 @@ export class CatalogoLibriComponent implements OnInit {
 
   ngOnInit() {
     this.crud.Lista().subscribe(lista => {
+      lista.forEach( el => {
+        el.aperto = false;
+      });
       this.listaLibri = lista;
       console.log(lista);
     });
 
   }
-  mostra() {
-    this.trama = !this.trama;
-    this.menu = !this.menu;
+  mostra(libro) {
+    libro.aperto = !libro.aperto;
   }
 }

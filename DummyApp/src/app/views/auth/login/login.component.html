@@ -1,52 +1,43 @@
-<!-- <div class="col-lg-4 card border centro" style= "background: red">
-
-    <form class="px-4 py-3">
-      <div class="form-group">
-        <label for="exampleDropdownFormEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
-      </div>
-      <div class="form-group">
-        <label for="exampleDropdownFormPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
-      </div>
-      <div class="form-group">
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="dropdownCheck">
-          <label class="form-check-label" for="dropdownCheck">
-            Remember me
-          </label>
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary" (click)="autentication()">Sign in</button>
-    </form>
-    <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="#">New around here? Sign up</a>
-    <a class="dropdown-item" href="#">Forgot password?</a>
-
-</div> -->
-
 <!-- Form Login -->
-<div class="row d-flex justify-content-center">
-  <div class="col-lg-4 card" style="background-color: whitesmoke;">
-    <form role="form" (submit)="onSubmit($event)">
-    <h2 class="text-center">Login</h2>
-    <div class="form-group">
-      <input [(ngModel)]="myForm.user" type="text" required name="user" id="user" class="form-control input-lg" placeholder="User">
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-lg-4 card" style="background-color: whitesmoke;">
+      <form role="form" (submit)="onSubmit($event)">
+        <h2 class="text-center">Login</h2>
+        <div class="form-group">
+          <input
+            [(ngModel)]="myForm.user"
+            type="text"
+            required
+            name="user"
+            #user
+            class="form-control input-lg"
+            placeholder="User"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            [(ngModel)]="myForm.password"
+            type="password"
+            required
+            name="password"
+            #password
+            class="form-control input-lg"
+            placeholder="Password"
+          />
+        </div>
+        <div class="col-lg-12" style="margin-bottom: 1vh;">
+          <input
+            type="submit"
+            value="Login"
+            class="btn btn-success btn-block btn-lg "
+            (click)="autentication()"
+          />
+        </div>
+        <div id="register-link" class="text-right">
+          <a routerLink="/sign-up" class="text-info">Register here</a>
+        </div>
+      </form>
     </div>
-    <div class="form-group">
-      <input [(ngModel)]="myForm.password" type="password" required name="password" id="password" class="form-control input-lg" placeholder="Password">
-    </div>
-    <div class="col-lg-12" style="margin-bottom: 1vh;">
-      <input
-        type="submit"
-        value="Login"
-        class="btn btn-success btn-block btn-lg "
-        (click)="autentication()"
-      />
-    </div>
-    <div id="register-link" class="text-right">
-      <a routerLink="/sign-up" class="text-info">Register here</a>
   </div>
-  </form>
-</div>
 </div>
