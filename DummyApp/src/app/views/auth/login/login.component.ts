@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
   }
 
   autentication() {
-    this.authService.getAccess('GGargani', 'gianluca');
+    this.authService.getAccess(this.myForm.user, this.myForm.password);
   }
 
 }
