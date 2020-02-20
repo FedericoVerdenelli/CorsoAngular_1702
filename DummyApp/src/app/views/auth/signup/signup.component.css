@@ -2,3 +2,7 @@
 .invalido {
   border: 2px solid red;
 }
+
+.manina {
+  cursor: default;
+}

@@ -36,7 +36,7 @@ export class SignupComponent implements OnInit {
   myForm: SignUpForm = new SignUpForm();
   myInput;
   signUpForm;
-  errore = false;
+  errore = true;
   constructor(private authServ: AuthService) {}
 
   ngOnInit() {
@@ -63,12 +63,17 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit(e) {
-    if (this.myForm.password === this.myForm.confirmPassword) {
+    if (this.errore) {
       this.authServ.getRegistered(this.myForm);
-    } else {
-      this.errore = true;
     }
   }
 
-  controllaPsw(group: FormGroup) {}
+  controllaPsw(group: FormGroup) {
+    console.log('zzzz', this.myForm.password);
+    console.log('zzzz', this.myForm.confirmPassword);
+
+    if (this.myForm.password !== this.myForm.confirmPassword) {
+      this.errore = false;
+    }
+  }
 }
