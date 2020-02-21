@@ -18,7 +18,7 @@ export class AppComponent implements OnDestroy, OnInit, OnChanges {
     this.subscription = router.events.subscribe((event) => {
       if (event instanceof NavigationStart) {
         var browserRefresh = !router.navigated;
-        if (!browserRefresh){
+        if (!browserRefresh) {
           this.mostraUtente = JSON.parse(sessionStorage.getItem('isLogged'));
         }
       }

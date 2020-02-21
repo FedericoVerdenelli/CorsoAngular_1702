@@ -1,4 +1,6 @@
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Component, OnInit } from '@angular/core';
+import { ModalUtenteComponent } from 'src/app/views/utente/modal-utente/modal-utente.component';
 
 
 export class UtenteForm {
@@ -36,17 +38,20 @@ export class UtenteForm {
 export class DettaglioUtenteComponent implements OnInit {
 
   utenteForm: UtenteForm = new UtenteForm();
+  mostraUtente = JSON.parse(sessionStorage.getItem('isLogged'));
 
-  constructor() { }
+
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit() {
+    console.log(this.mostraUtente);
   }
 
   salvaForm() {
 
   }
 
-  prova() {
-
+  apri() {
+    this.modalService.open(DettaglioUtenteComponent);
   }
 }
