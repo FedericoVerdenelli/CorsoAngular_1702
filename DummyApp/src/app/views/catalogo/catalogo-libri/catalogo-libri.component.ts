@@ -1,5 +1,8 @@
 import { CrudService } from './../../../services/crud.service';
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbdModalConfigComponent } from '../ngbd-modal-config/ngbd-modal-config.component';
+
 
 export class Libro {
   id: number;
@@ -34,12 +37,11 @@ export class Libro {
   styleUrls: ['./catalogo-libri.component.css']
 })
 export class CatalogoLibriComponent implements OnInit {
-  trama = false;
-  menu = true;
+  show = false;
   listaLibri: any = [];
   mostraUtente = JSON.parse(sessionStorage.getItem('isLogged'));
   libro = new Libro(1004, 'z', 'b', 'c', '2000', this.mostraUtente.nome ) ; // libro test da inserire
-  constructor(private crud: CrudService) { }
+  constructor(private crud: CrudService, private modalService: NgbModal) { }
 
   ngOnInit() {
 
@@ -60,5 +62,11 @@ export class CatalogoLibriComponent implements OnInit {
   }
   modifica(libro) {
     alert(libro.id);
+    console.log(this.show);
+    this.show = !this.show;
+    console.log(this.show);
+  }
+  open(content) {
+    this.modalService.open(NgbdModalConfigComponent);
   }
 }
