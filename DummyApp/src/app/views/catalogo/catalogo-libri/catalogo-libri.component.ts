@@ -1,5 +1,7 @@
 import { CrudService } from './../../../services/crud.service';
 import { Component, OnInit } from '@angular/core';
+import { NgbdModalConfigComponent } from '../ngbd-modal-config/ngbd-modal-config.component';
+
 
 @Component({
   selector: 'app-catalogo-libri',
@@ -10,7 +12,7 @@ export class CatalogoLibriComponent implements OnInit {
   trama = false;
   menu = true;
   listaLibri: any = [];
-
+  modificaLibri;
   constructor(private crud: CrudService) { }
 
   ngOnInit() {
