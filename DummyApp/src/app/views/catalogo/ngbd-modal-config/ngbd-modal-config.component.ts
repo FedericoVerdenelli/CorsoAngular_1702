@@ -18,5 +18,8 @@ export class NgbdModalConfigComponent implements OnInit {
   }
   ngOnInit() {
   }
+  close(content) {
+    this.modalService.dismissAll(content);
+  }
 
 }
