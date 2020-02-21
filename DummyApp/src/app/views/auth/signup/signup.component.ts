@@ -47,11 +47,11 @@ export class SignupComponent implements OnInit {
       // tslint:disable-next-line: max-line-length
       email: new FormControl(this.myForm.login, [
         Validators.required,
-        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+        Validators.pattern('^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$')
+
       ]),
       password: new FormControl(this.myForm.password, [
         Validators.required,
-        Validators.minLength(5),
         Validators.required,
         Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')
       ]),

@@ -36,10 +36,13 @@ export class UtenteForm {
 export class DettaglioUtenteComponent implements OnInit {
 
   utenteForm: UtenteForm = new UtenteForm();
+  mostraUtente = JSON.parse(sessionStorage.getItem('isLogged'));
+
 
   constructor() { }
 
   ngOnInit() {
+    console.log(this.mostraUtente);
   }
 
   salvaForm() {
