@@ -10,8 +10,8 @@
           {{ mostraUtente.nome }}
         </div>
         <div class="col-lg-1 d-flex align-items-center">
-        <i class="fas fa-pencil-alt d-flex justify-content-end"></i>
-      </div>
+          <i class="fas fa-pencil-alt d-flex justify-content-end" style="cursor: pointer;" (click)="openNome(nome)"> </i>
+        </div>
       </div>
     </li>
     <li class="list-group-item">
@@ -23,7 +23,7 @@
           {{ mostraUtente.cognome }}
         </div>
         <div class="col-lg-1 d-flex align-items-center">
-          <i class="fas fa-pencil-alt d-flex justify-content-end"></i>
+          <i class="fas fa-pencil-alt d-flex justify-content-end" style="cursor: pointer;" (click)="openCognome(cognome)"></i>
         </div>
       </div>
     </li>
@@ -55,9 +55,104 @@
         <div class="col-lg-8">
         </div>
         <div class="col-lg-1 d-flex align-items-center">
-          <i class="fas fa-pencil-alt d-flex justify-content-end" style="cursor: pointer;" (click)="apri()"></i>
+          <i class="fas fa-pencil-alt d-flex justify-content-end" style="cursor: pointer;"
+            (click)="openPassword(password)"></i>
         </div>
       </div>
     </li>
   </ul>
 </div>
+
+<!-- MODAL NOME -->
+
+<ng-template #nome let-modal>
+    <div class="modal-header" style="background-color: rgb(40, 49, 72); color:white;">
+      <h4 class="modal-title">Modifica nome</h4>
+      <button type="button" class="close" (click)="modal.dismiss()">
+        <span>&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="row col-lg-12">
+        <div class="d-flex align-items-center col-lg-5">
+          <label>Inserisci nome</label>
+        </div>
+        <div class="col-lg-7">
+          <input 
+          class="form-control input-lg"
+          type="password" 
+          style="margin-bottom: 5px;"
+          placeholder={{mostraUtente.nome}}/>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" (click)="salva()">Salva</button>
+    </div>
+  </ng-template>
+
+<!-- MODAL COGNOME -->
+
+<ng-template #cognome let-modal>
+    <div class="modal-header" style="background-color: rgb(40, 49, 72); color:white;">
+      <h4 class="modal-title">Modifica cognome</h4>
+      <button type="button" class="close" (click)="modal.dismiss()">
+        <span>&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="row col-lg-12">
+        <div class="d-flex align-items-center col-lg-5">
+          <label>Inserisci cognome </label>
+        </div>
+        <div class="col-lg-7">
+          <input 
+          class="form-control input-lg"
+          style="margin-bottom: 5px;"
+          placeholder={{mostraUtente.cognome}}/>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" (click)="salva()">Salva</button>
+    </div>
+  </ng-template>
+
+<!-- MODAL PASSWORD -->
+
+<ng-template #password let-modal>
+  <div class="modal-header" style="background-color: rgb(40, 49, 72); color:white;">
+    <h4 class="modal-title">Modifica Password</h4>
+    <button type="button" class="close" (click)="modal.dismiss()">
+      <span>&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row col-lg-12">
+      <div class="d-flex align-items-center col-lg-5">
+        <label>Nuova Password</label>
+      </div>
+      <div class="col-lg-7">
+        <input 
+        class="form-control input-lg"
+        type="password" 
+        [(ngModel)]="modalProva.password"
+        style="margin-bottom: 5px;"/>
+      </div>
+    </div>
+    <div class="row col-lg-12">
+      <div class="d-flex align-items-center col-lg-5">
+        <label>Conferma Password</label>
+      </div>
+      <div class="col-lg-7">
+        <input 
+        class="form-control input-lg"
+        type="password"
+        [(ngModel)]="modalProva.confirmPassword" />
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success" (click)="salvaPassword()">Salva</button>
+  </div>
+</ng-template>
