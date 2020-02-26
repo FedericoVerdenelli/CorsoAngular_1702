@@ -25,20 +25,6 @@ export class UtenteForm {
     this.confirmPassword = confirmPassword;
   }
 
-
-}
-
-export class PasswordModal {
-  confirmPassword: string;
-  password: string;
-
-  constructor(
-    confirmPassword='',
-    password=''
-  ){
-    this.confirmPassword=confirmPassword;
-    this.password=password;
-  }
 }
 
 @Component({
@@ -50,7 +36,7 @@ export class PasswordModal {
 export class DettaglioUtenteComponent implements OnInit {
 
   mostraUtente = JSON.parse(sessionStorage.getItem('isLogged'));
-  modalProva: PasswordModal = new PasswordModal();
+  modal: UtenteForm = new UtenteForm();
 
   constructor(private modalService: NgbModal) { }
 
@@ -71,7 +57,7 @@ export class DettaglioUtenteComponent implements OnInit {
   }
   
   salvaPassword(){
-    if (this.modalProva.confirmPassword === this.modalProva.password) {
+    if (this.modal.confirmPassword === this.modal.password) {
       console.log('autenticazione riuscita');
     } else {
       console.log('autenticazione fallita');
