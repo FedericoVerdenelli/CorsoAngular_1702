@@ -15,6 +15,9 @@ export class NavigationService {
   goToLibreria() {
     this.router.navigate(['/libreria']);
   }
+  goToHome() {
+    this.router.navigate(['/home']);
+  }
 }
 
 

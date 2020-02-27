@@ -2,7 +2,7 @@
 <nav class="navbar">
   <div class="collapse navbar-collapse d-flex flex-row" id="navbarNav">
     <!-- LOGO -->
-    <img src="assets/logo.png" style="width: 10%;"/>
+    <img routerLink="/home" src="assets/logo.png" style="width: 10%;"/>
     <!-- BARRA COLORATA -->
     <ul class="navbar-nav d-flex flex-row flex-grow-1" style="background-color:rgb(40, 49, 72);">
       <div *ngIf="!autorizzato" class="schermata-iniziale d-flex flex-row flex-row-reverse"
@@ -30,7 +30,7 @@
           </a>
         </li>
         <li class="nav-item active p-2" >
-          <a routerLink="/login" class="nav-link bianco" href="#">
+          <a routerLink="/home" class="nav-link bianco" href="#">
             <!-- FONT AWESOME -->
             <i class="fas logo fa-sign-out-alt" (click)="servizioAcc.Logout()"></i>
           </a>

@@ -40,6 +40,7 @@ export class AuthService {
 // CONST RENDE COSTANTE L'INDIRIZZO DI MEMORIA DI RIFERIMENTO, IL CONTENUTO DELLA CELLA DI MEMORIA PUO' CAMBIARE
   signUp(nuovoUtente: SignUpForm) {
     const userAuth = new UserAuth( true, nuovoUtente);
+    sessionStorage.setItem('isLogged', JSON.stringify(nuovoUtente));
     this.subject.next(userAuth);
     this.httpClient.post('http://localhost:3000/Utenti', nuovoUtente).subscribe();
     this.navigation.goToLibreria();
@@ -76,7 +77,7 @@ export class AuthService {
     sessionStorage.setItem('isLogged', '');
     const userAuth = new UserAuth(false);
     this.subject.next(userAuth);
-    this.navigation.goToLogin();
+    this.navigation.goToHome();
   }
   // QUESTO METODO VIENE CHIAMATO IN APP COMPONENT PER MOSTRARCI QUALI COMPONENTI POSSIAMO USARE NELLA NAVBAR
   getUserAuth(): Observable<any> {
