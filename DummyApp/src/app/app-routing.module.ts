@@ -4,6 +4,7 @@ import { SignupComponent } from './views/auth/signup/signup.component';
 import { LoginComponent } from './views/auth/login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { NgbdModalConfigComponent } from './views/catalogo/ngbd-modal-config/ngbd-modal-config.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,11 @@ const routes: Routes = [
     path: 'profilo-utente',
     pathMatch: 'full',
     component: DettaglioUtenteComponent
+  },
+  {
+    path: 'modal-libri',
+    pathMatch: 'full',
+    component: NgbdModalConfigComponent
   }
 ];
 

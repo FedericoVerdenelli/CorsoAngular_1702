@@ -9,7 +9,8 @@ import { CatalogoLibriComponent } from './views/catalogo/catalogo-libri/catalogo
 import { DettaglioUtenteComponent } from './views/utente/dettaglio-utente/dettaglio-utente.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbdModalConfigComponent } from './views/catalogo/ngbd-modal-config/ngbd-modal-config.component';
 
 
 
@@ -19,7 +20,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LoginComponent,
     SignupComponent,
     CatalogoLibriComponent,
-    DettaglioUtenteComponent
+    DettaglioUtenteComponent,
+    NgbdModalConfigComponent
   ],
   imports: [
     NgbModule,
@@ -30,7 +32,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule
 
   ],
-  providers: [],
+  providers: [NgbModalConfig, NgbModal],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
