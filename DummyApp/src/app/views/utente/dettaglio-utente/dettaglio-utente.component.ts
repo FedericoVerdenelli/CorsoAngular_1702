@@ -1,7 +1,5 @@
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Component, OnInit } from '@angular/core';
-import { ModalUtenteComponent } from 'src/app/views/utente/modal-utente/modal-utente.component';
-
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 export class UtenteForm {
   nome: string;
@@ -27,19 +25,18 @@ export class UtenteForm {
     this.confirmPassword = confirmPassword;
   }
 
-
 }
 
 @Component({
   selector: 'app-dettaglio-utente',
   templateUrl: './dettaglio-utente.component.html',
+  encapsulation: ViewEncapsulation.None,
   styleUrls: ['./dettaglio-utente.component.css']
 })
 export class DettaglioUtenteComponent implements OnInit {
 
-  utenteForm: UtenteForm = new UtenteForm();
   mostraUtente = JSON.parse(sessionStorage.getItem('isLogged'));
-
+  modal: UtenteForm = new UtenteForm();
 
   constructor(private modalService: NgbModal) { }
 
@@ -47,11 +44,23 @@ export class DettaglioUtenteComponent implements OnInit {
     console.log(this.mostraUtente);
   }
 
-  salvaForm() {
-
+  openPassword(password){
+    this.modalService.open(password);
   }
 
-  apri() {
-    this.modalService.open(DettaglioUtenteComponent);
+  openCognome(cognome){
+    this.modalService.open(cognome);
+  }
+
+  openNome(nome){
+    this.modalService.open(nome);
+  }
+  
+  salvaPassword(){
+    if (this.modal.confirmPassword === this.modal.password) {
+      console.log('autenticazione riuscita');
+    } else {
+      console.log('autenticazione fallita');
+    }
   }
 }

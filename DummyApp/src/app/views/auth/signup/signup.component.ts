@@ -64,7 +64,7 @@ export class SignupComponent implements OnInit {
 
   onSubmit(e) {
     if (this.errore) {
-      this.authServ.getRegistered(this.myForm);
+      this.authServ.signUp(this.myForm);
     }
   }
 
