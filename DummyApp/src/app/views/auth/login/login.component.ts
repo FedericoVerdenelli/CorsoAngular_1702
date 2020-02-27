@@ -1,6 +1,6 @@
 import { AuthService } from './../../../services/auth.service';
-import { Component, OnInit } from '@angular/core';
-import { NonNullAssert } from '@angular/compiler';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 class Login {
   user: string;
@@ -17,9 +17,11 @@ class Login {
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
+  subscription: Subscription;
   myForm: Login = new Login();
-
+  booleanaErr = true;
+  hoCliccato = false;
   constructor(private authService: AuthService) {
    }
 
@@ -31,7 +33,25 @@ export class LoginComponent implements OnInit {
   }
 
   autentication() {
-    this.authService.login(this.myForm.user, this.myForm.password);
-  }
 
+    this.authService.login(this.myForm.user, this.myForm.password);
+    this.hoCliccato = true;
+    this.subscription = this.authService
+      .getUserAuth()
+      .subscribe(userAuth => {
+        console.log('proprieta di userAuth: '+ userAuth.autenticato);
+        if (userAuth.autenticato && this.hoCliccato) {
+          this.booleanaErr = true;
+          console.log('Condizione di non mostra di errore ' + this.booleanaErr + 'valore di user autenticato ' + userAuth.autenticato);
+        } else {
+          this.booleanaErr = false;
+          console.log('Condizione di mostra paragrafo' + this.booleanaErr + ' user autenticato else della if  ' + userAuth.autenticato);
+        }
+      });
+
+  }
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+
+  }
 }

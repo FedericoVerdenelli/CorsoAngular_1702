@@ -99,6 +99,14 @@
       "trama": "c",
       "primaEdizione": "2000",
       "creatore": "admin"
+    },
+    {
+      "id": 1008,
+      "titolo": "z",
+      "autore": "b",
+      "trama": "c",
+      "primaEdizione": "2000",
+      "creatore": "Gianluca"
     }
   ]
 }

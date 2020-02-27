@@ -40,7 +40,7 @@ export class CatalogoLibriComponent implements OnInit {
   show = false;
   listaLibri: any = [];
   mostraUtente = JSON.parse(sessionStorage.getItem('isLogged'));
-  libro = new Libro(1004, 'z', 'b', 'c', '2000', this.mostraUtente.nome ) ; // libro test da inserire
+  libro = new Libro(1008, 'z', 'b', 'c', '2000', this.mostraUtente.nome ) ; // libro test da inserire
   constructor(private crud: CrudService, private modalService: NgbModal) { }
 
   ngOnInit() {
