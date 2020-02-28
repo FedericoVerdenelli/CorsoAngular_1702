@@ -41,7 +41,6 @@ export class CatalogoLibriComponent implements OnInit {
   listaLibri: any = [];
   mostraUtente = JSON.parse(sessionStorage.getItem('isLogged'));
   librolibro: Libro = new Libro();
-  libroModificato: Libro;
   // libro = new Libro('1004', 'z', 'b', 'c', '2000', this.mostraUtente.nome ) ; // libro test da inserire
   constructor(config: NgbModalConfig, private crud: CrudService, private modalService: NgbModal) {
     config.backdrop = 'static';
@@ -71,9 +70,27 @@ export class CatalogoLibriComponent implements OnInit {
     this.modalService.open(editProfileModal);
     this.librolibro = libro;
   }
-  salva(librolibro){
+  openAggiungi(aggiungiLibroModal) {
+    this.modalService.open(aggiungiLibroModal);
+  }
+  salva(libro){
+    this.librolibro = libro;
+    console.log(libro);
     this.crud.updateLibro(this.librolibro);
     this.modalService.dismissAll();
+  }
+  elimina(id) {
+    this.librolibro.id = id;
+    this.crud.deleteLibro(id);
+    console.log(id);
+    this.modalService.dismissAll();
+  }
+  crea(libro) {
+    this.librolibro.creatore = this.mostraUtente.nome;
+    this.librolibro = libro;
+    this.crud.createLibro(libro);
+    this.modalService.dismissAll();
+    window.location.reload();
   }
   close() {
     this.modalService.dismissAll();

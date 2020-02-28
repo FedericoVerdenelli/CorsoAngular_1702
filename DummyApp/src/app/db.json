@@ -107,10 +107,10 @@
   "libri": [
     {
       "id": 1001,
-      "titolo": "a",
-      "autore": "b",
-      "trama": "c",
-      "primaEdizione": "2000",
+      "titolo": "piccole donne",
+      "autore": "Louisa May Alcott",
+      "trama": "Adattamento del classico di Louise May Alcott, che narra la storia di quattro sorelle durante la guerra civile americana. In viaggio con la madre, Amy, Jo, Beth e Meg scoprono l'amore e l'importanza dei legami familiari.",
+      "primaEdizione": 1868,
       "creatore": "piero",
       "aperto": false
     },
@@ -120,40 +120,33 @@
       "autore": "Dan Brown",
       "trama": "A Parigi, il curatore del Louvre, Jacques Saunière, viene ucciso per mano di uno strano monaco albino appartenente all'Opus Dei. Lo studioso di simbologia, il professor Robert Langdon, viene a sapere dell'omicidio e, condotto al Louvre, viene interrogato, poiché ritenuto colpevole della morte del curatore. Langdon, affiancato da Sophie Neveu, nipote del curatore ucciso, e successivamente anche dallo studioso sir Leigh Teabing, dovrà ripercorrere attraverso indizi nascosti in importanti opere d'arte, enigmi e misteriosi artefatti, il percorso del Santo Graal, uno dei più grandi misteri della storia. Tale percorso si incrocia con quello di un'antica e misteriosa società segreta nota come Priorato di Sion di cui Saunière faceva parte come Gran Maestro (livello più elevato), che nasconde un inconcepibile segreto che, se rivelato, potrebbe compromettere i fondamenti stessi del Cristianesimo, nella versione tramandata dalla Chiesa cattolica.",
       "primaEdizione": "2003",
-      "creatore": "user"
-    },
-    {
-      "id": 1003,
-      "titolo": "z",
-      "autore": "b",
-      "trama": "c",
-      "primaEdizione": "2000",
-      "creatore": "piero",
+      "creatore": "user",
       "aperto": false
     },
     {
-      "id": 1005,
-      "titolo": "z",
-      "autore": "b",
-      "trama": "c",
-      "primaEdizione": "2000",
-      "creatore": "admin"
-    },
-    {
-      "id": 1004,
-      "titolo": "z",
-      "autore": "b",
-      "trama": "c",
-      "primaEdizione": "2000",
-      "creatore": "admin"
-    },
-    {
       "id": 1008,
-      "titolo": "z",
-      "autore": "b",
-      "trama": "c",
-      "primaEdizione": "2000",
-      "creatore": "Gianluca"
+      "titolo": "Il piccolo principe",
+      "autore": "Antoine de Saint-Exupéry",
+      "trama": "Un pilota di aerei, precipitato nel deserto del Sahara, incontra inaspettatamente un bambino che gli chiede di disegnargli una pecora. Dopo vari tentativi non riusciti, il pilota disegna una scatola, dicendo che la pecora desiderata è all'interno; finalmente il disegno viene accettato. Poco per volta fanno amicizia, ed il bambino spiega di vivere su di un lontano asteroide, sul quale abita solo lui, tre vulcani di cui uno inattivo e una piccola rosa, molto vanitosa, che lui cura.",
+      "primaEdizione": 1943,
+      "creatore": "Gianluca",
+      "aperto": false
+    },
+    {
+      "id": "1988",
+      "titolo": "Corso Angular",
+      "autore": "Intent",
+      "trama": "corso base front end",
+      "primaEdizione": 2020,
+      "creatore": "Stefano"
+    },
+    {
+      "id": "1999",
+      "titolo": "Corso Java",
+      "autore": "Federica Renzetti",
+      "trama": "corso base di back end",
+      "primaEdizione": 2019,
+      "creatore": "Stefano"
     }
   ]
 }
