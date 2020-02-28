@@ -102,6 +102,87 @@
       "password": "a",
       "confirmPassword": "a",
       "id": 11
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "a@a.it",
+      "email": "aa@a.it",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 12
+    },
+    {
+      "nome": "Gianluca",
+      "cognome": "Gargani",
+      "login": "GGargani",
+      "email": "ggargani@gmail.com",
+      "password": "gianluca",
+      "confirmPassword": "gianluca",
+      "id": 13
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "AAA",
+      "email": "aa@a.it",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 14
+    },
+    {
+      "nome": "",
+      "cognome": "",
+      "login": "",
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "id": 15
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "aaaaaaaaaaaaaaa",
+      "email": "aa@a.it",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 16
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "aaaaaaaaa",
+      "email": "a@a-i",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 17
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "aaaaa",
+      "email": "aa@a.it",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 18
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "aaaa",
+      "email": "aa@a.it",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 19
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "GGarganiaaaaaaa",
+      "email": "aa@a.it",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 20
     }
   ],
   "libri": [
