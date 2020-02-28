@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgbModule, NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdModalConfigComponent } from './views/catalogo/ngbd-modal-config/ngbd-modal-config.component';
+import { HomeComponent } from './views/home/home.component';
 
 
 
@@ -21,7 +22,8 @@ import { NgbdModalConfigComponent } from './views/catalogo/ngbd-modal-config/ngb
     SignupComponent,
     CatalogoLibriComponent,
     DettaglioUtenteComponent,
-    NgbdModalConfigComponent
+    NgbdModalConfigComponent,
+    HomeComponent
   ],
   imports: [
     NgbModule,

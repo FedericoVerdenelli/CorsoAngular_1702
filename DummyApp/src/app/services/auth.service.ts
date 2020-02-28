@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject, Observable } from 'rxjs';
 import { SignUpForm } from '../views/auth/signup/signup.component';
-import { Router } from '@angular/router';
+
+
 
 // USER AUTH E' UNA CLASSE CHE CONTIENE UNA BOOLEANA E UNA VARIABILE USER CHE POTREBBE L'OGGETTO UTENTE
 class UserAuth  {
@@ -26,7 +27,7 @@ class UserAuth  {
 })
 export class AuthService {
 
-
+  boolenaAuth = false;
   private loggedInStatus = sessionStorage.getItem('isLogged') || '';
   listaUtenti: any;
   subject = new Subject<UserAuth>();
@@ -39,6 +40,7 @@ export class AuthService {
 // CONST RENDE COSTANTE L'INDIRIZZO DI MEMORIA DI RIFERIMENTO, IL CONTENUTO DELLA CELLA DI MEMORIA PUO' CAMBIARE
   signUp(nuovoUtente: SignUpForm) {
     const userAuth = new UserAuth( true, nuovoUtente);
+    sessionStorage.setItem('isLogged', JSON.stringify(nuovoUtente));
     this.subject.next(userAuth);
     this.httpClient.post('http://localhost:3000/Utenti', nuovoUtente).subscribe();
     this.navigation.goToLibreria();
@@ -59,9 +61,14 @@ export class AuthService {
           const userAuth = new UserAuth(true, el);
           this.subject.next(userAuth);
           this.navigation.goToLibreria();
-
+          this.boolenaAuth = true;
         }
+
       });
+      if (!this.boolenaAuth){
+        const userAuth = new UserAuth(false);
+        this.subject.next(userAuth);
+      }
     });
   }
   // AL LOGOUT SESSION STORAGE VIENE SVUOTATO, USER AUTH.BOOLEANA SETTATO A FALSO E POI VIENE MANDATO L'AGGIORNAMENTO
@@ -70,10 +77,11 @@ export class AuthService {
     sessionStorage.setItem('isLogged', '');
     const userAuth = new UserAuth(false);
     this.subject.next(userAuth);
-    this.navigation.goToLogin();
+    this.navigation.goToHome();
   }
   // QUESTO METODO VIENE CHIAMATO IN APP COMPONENT PER MOSTRARCI QUALI COMPONENTI POSSIAMO USARE NELLA NAVBAR
   getUserAuth(): Observable<any> {
+    // alert(JSON.stringify(this.subject));
     return this.subject.asObservable();
   }
 }

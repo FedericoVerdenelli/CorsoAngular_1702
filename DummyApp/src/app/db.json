@@ -57,6 +57,51 @@
       "password": "marco",
       "confirmPassword": "marco",
       "id": 6
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "a",
+      "email": "a@a.it",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 7
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "a",
+      "email": "a@a-i",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 8
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "a",
+      "email": "a@a-i",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 9
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "a",
+      "email": "a@a-i",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 10
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "a",
+      "email": "a@a-i",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 11
     }
   ],
   "libri": [
@@ -101,6 +146,14 @@
       "trama": "c",
       "primaEdizione": "2000",
       "creatore": "admin"
+    },
+    {
+      "id": 1008,
+      "titolo": "z",
+      "autore": "b",
+      "trama": "c",
+      "primaEdizione": "2000",
+      "creatore": "Gianluca"
     }
   ]
 }

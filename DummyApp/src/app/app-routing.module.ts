@@ -5,13 +5,19 @@ import { LoginComponent } from './views/auth/login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NgbdModalConfigComponent } from './views/catalogo/ngbd-modal-config/ngbd-modal-config.component';
+import { HomeComponent } from './views/home/home.component';
 
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: LoginComponent
+    component: HomeComponent
+  },
+  {
+    path: 'home',
+    pathMatch: 'full',
+    component: HomeComponent
   },
   {
     path: 'login',
@@ -42,6 +48,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+exports: [RouterModule]
 })
 export class AppRoutingModule { }
