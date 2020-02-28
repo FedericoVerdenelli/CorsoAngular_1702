@@ -28,6 +28,7 @@ class UserAuth  {
 export class AuthService {
 
   boolenaAuth = false;
+  booleanaRegistr = true;
   private loggedInStatus = sessionStorage.getItem('isLogged') || '';
   listaUtenti: any;
   subject = new Subject<UserAuth>();
@@ -39,11 +40,26 @@ export class AuthService {
 // IN QUESTO SERVIZIO E' INIETTATO IL SERVIZIO NAVIGATION CHE CONTIENE LE ROTTE RAGGIUNGIBILI TRAMIT TYPESCRIPT
 // CONST RENDE COSTANTE L'INDIRIZZO DI MEMORIA DI RIFERIMENTO, IL CONTENUTO DELLA CELLA DI MEMORIA PUO' CAMBIARE
   signUp(nuovoUtente: SignUpForm) {
-    const userAuth = new UserAuth( true, nuovoUtente);
-    sessionStorage.setItem('isLogged', JSON.stringify(nuovoUtente));
-    this.subject.next(userAuth);
-    this.httpClient.post('http://localhost:3000/Utenti', nuovoUtente).subscribe();
-    this.navigation.goToLibreria();
+    this.booleanaRegistr = true;
+    this.httpClient.get('http://localhost:3000/Utenti').subscribe(listaUte => {
+      this.listaUtenti = listaUte;
+      this.listaUtenti.forEach(el => {
+        if (el.login === nuovoUtente.login) {
+          this.booleanaRegistr = false;
+          const userAuth = new UserAuth(false);
+          this.subject.next(userAuth);
+        }
+
+      });
+      if (this.booleanaRegistr){
+        const userAuth = new UserAuth( true, nuovoUtente);
+        sessionStorage.setItem('isLogged', JSON.stringify(nuovoUtente));
+        this.subject.next(userAuth);
+        this.httpClient.post('http://localhost:3000/Utenti', nuovoUtente).subscribe();
+        this.navigation.goToLibreria();
+      }
+    });
+
   }
 
   // SESSION STORAGE E' UNA MEMORIA PRESTABILITA DAL BROWSER DI 10 MEGA, IL SUO UTILIZZO ESSENDO LA MEMORIA IRRISORIA
@@ -81,7 +97,14 @@ export class AuthService {
   }
   // QUESTO METODO VIENE CHIAMATO IN APP COMPONENT PER MOSTRARCI QUALI COMPONENTI POSSIAMO USARE NELLA NAVBAR
   getUserAuth(): Observable<any> {
-    // alert(JSON.stringify(this.subject));
     return this.subject.asObservable();
   }
+  // QUESTO METODO SERVE DURANTE I LOGIN/REGISTRAZIONI PER CONTROLLARE SE SESSIONFACTORY E' STATO POPOLATO
+  isEmpty(obj) {
+    for(var key in obj) {
+        if(obj.hasOwnProperty(key))
+            return false;
+    }
+    return true;
+}
 }

@@ -102,6 +102,87 @@
       "password": "a",
       "confirmPassword": "a",
       "id": 11
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "a@a.it",
+      "email": "aa@a.it",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 12
+    },
+    {
+      "nome": "Gianluca",
+      "cognome": "Gargani",
+      "login": "GGargani",
+      "email": "ggargani@gmail.com",
+      "password": "gianluca",
+      "confirmPassword": "gianluca",
+      "id": 13
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "AAA",
+      "email": "aa@a.it",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 14
+    },
+    {
+      "nome": "",
+      "cognome": "",
+      "login": "",
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "id": 15
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "aaaaaaaaaaaaaaa",
+      "email": "aa@a.it",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 16
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "aaaaaaaaa",
+      "email": "a@a-i",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 17
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "aaaaa",
+      "email": "aa@a.it",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 18
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "aaaa",
+      "email": "aa@a.it",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 19
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "GGarganiaaaaaaa",
+      "email": "aa@a.it",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 20
     }
   ],
   "libri": [
@@ -120,8 +201,16 @@
       "autore": "Dan Brown",
       "trama": "A Parigi, il curatore del Louvre, Jacques Saunière, viene ucciso per mano di uno strano monaco albino appartenente all'Opus Dei. Lo studioso di simbologia, il professor Robert Langdon, viene a sapere dell'omicidio e, condotto al Louvre, viene interrogato, poiché ritenuto colpevole della morte del curatore. Langdon, affiancato da Sophie Neveu, nipote del curatore ucciso, e successivamente anche dallo studioso sir Leigh Teabing, dovrà ripercorrere attraverso indizi nascosti in importanti opere d'arte, enigmi e misteriosi artefatti, il percorso del Santo Graal, uno dei più grandi misteri della storia. Tale percorso si incrocia con quello di un'antica e misteriosa società segreta nota come Priorato di Sion di cui Saunière faceva parte come Gran Maestro (livello più elevato), che nasconde un inconcepibile segreto che, se rivelato, potrebbe compromettere i fondamenti stessi del Cristianesimo, nella versione tramandata dalla Chiesa cattolica.",
       "primaEdizione": "2003",
-      "creatore": "user",
-      "aperto": false
+      "creatore": "user"
+    },
+    {
+      "id": 1003,
+      "titolo": "z",
+      "autore": "b",
+      "trama": "c",
+      "primaEdizione": "2000",
+      "creatore": "piero",
+      "aperto": true
     },
     {
       "id": 1008,
