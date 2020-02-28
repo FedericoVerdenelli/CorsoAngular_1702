@@ -17,13 +17,13 @@
     <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
   </div> -->
 
-  <form style="padding: 5%;">
+  <!-- <form style="padding: 5%;">
     <div class="modal-header blu row">
       <div class="d-flex justify-content-start">
         <h4 class="modal-title" style="color: white;" id="modal-basic-title">Modifica Libro</h4>
       </div>
       <div class="d-flex justify-content-end">
-        <button type="button" class="close" style="color: white;" aria-label="Close" (click)="close(content)">
+        <button type="button" class="close" style="color: white;" aria-label="Close" (click)="close()">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -31,7 +31,7 @@
     <div style="margin-top: 5px;">
       <div class="form-group">
         <label for="codice">Codice</label>
-        <input type="text" class="form-control" id="codice" placeholder="1001">
+        <input type="text" class="form-control" id="codice" placeholder={{libro}}>
       </div>
       <div class="form-group">
         <label for="titolo">Titolo</label>
@@ -49,7 +49,8 @@
     <div class="d-flex justify-content-center">
       <button type="submit" class="btn btn-primary">salva</button>
     </div>
-  </form>
+  </form> -->
+
 
 
 <!-- <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button> -->

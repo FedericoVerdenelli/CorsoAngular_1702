@@ -55,7 +55,7 @@ export class DettaglioUtenteComponent implements OnInit {
   openNome(nome){
     this.modalService.open(nome);
   }
-  
+
   salvaPassword(){
     if (this.modal.confirmPassword === this.modal.password) {
       console.log('autenticazione riuscita');

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Libro } from '../catalogo-libri/catalogo-libri.component';
 
 @Component({
   selector: 'app-ngbd-modal-config',
@@ -7,19 +8,20 @@ import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./ngbd-modal-config.component.css']
 })
 export class NgbdModalConfigComponent implements OnInit {
+  @Input() librolibro;
+
   constructor(config: NgbModalConfig, private modalService: NgbModal) {
-    // customize default values of modals used by this component tree
     config.backdrop = 'static';
     config.keyboard = false;
   }
 
-  open(content) {
-    this.modalService.open(content);
-  }
+  // open() {
+  //   this.modalService.open(NgbdModalConfigComponent);
+  // }
   ngOnInit() {
   }
-  close(content) {
-    this.modalService.dismissAll(content);
+  close() {
+    this.modalService.dismissAll();
   }
 
 }

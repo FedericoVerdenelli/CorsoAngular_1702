@@ -1,23 +1,23 @@
 import { CrudService } from './../../../services/crud.service';
 import { Component, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdModalConfigComponent } from '../ngbd-modal-config/ngbd-modal-config.component';
 
 
 export class Libro {
-  id: number;
+  id: string;
   titolo: string;
   autore: string;
   trama: string;
-  primaEdizione: number;
+  primaEdizione: string;
   creatore: string;
 
   constructor(
-    id ,
+    id = '',
     titolo = '',
     autore = '',
     trama = '',
-    primaEdizione ,
+    primaEdizione = '',
     creatore = '',
   ) {
     this.id = id;
@@ -40,8 +40,13 @@ export class CatalogoLibriComponent implements OnInit {
   show = false;
   listaLibri: any = [];
   mostraUtente = JSON.parse(sessionStorage.getItem('isLogged'));
-  libro = new Libro(1004, 'z', 'b', 'c', '2000', this.mostraUtente.nome ) ; // libro test da inserire
-  constructor(private crud: CrudService, private modalService: NgbModal) { }
+  librolibro: Libro = new Libro();
+  libroModificato: Libro;
+  // libro = new Libro('1004', 'z', 'b', 'c', '2000', this.mostraUtente.nome ) ; // libro test da inserire
+  constructor(config: NgbModalConfig, private crud: CrudService, private modalService: NgbModal) {
+    config.backdrop = 'static';
+    config.keyboard = false;
+  }
 
   ngOnInit() {
 
@@ -53,7 +58,6 @@ export class CatalogoLibriComponent implements OnInit {
         el.aperto = false;
       });
       this.listaLibri = lista;
-      console.log(lista);
     });
 
   }
@@ -61,12 +65,17 @@ export class CatalogoLibriComponent implements OnInit {
     libro.aperto = !libro.aperto;
   }
   modifica(libro) {
-    alert(libro.id);
-    console.log(this.show);
     this.show = !this.show;
-    console.log(this.show);
   }
-  open(content) {
-    this.modalService.open(NgbdModalConfigComponent);
+  open(editProfileModal, libro) {
+    this.modalService.open(editProfileModal);
+    this.librolibro = libro;
+  }
+  salva(librolibro){
+    this.crud.updateLibro(this.librolibro);
+    this.modalService.dismissAll();
+  }
+  close() {
+    this.modalService.dismissAll();
   }
 }
