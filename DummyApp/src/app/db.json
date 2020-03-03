@@ -57,16 +57,143 @@
       "password": "marco",
       "confirmPassword": "marco",
       "id": 6
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "a",
+      "email": "a@a.it",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 7
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "a",
+      "email": "a@a-i",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 8
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "a",
+      "email": "a@a-i",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 9
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "a",
+      "email": "a@a-i",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 10
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "a",
+      "email": "a@a-i",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 11
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "a@a.it",
+      "email": "aa@a.it",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 12
+    },
+    {
+      "nome": "Gianluca",
+      "cognome": "Gargani",
+      "login": "GGargani",
+      "email": "ggargani@gmail.com",
+      "password": "gianluca",
+      "confirmPassword": "gianluca",
+      "id": 13
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "AAA",
+      "email": "aa@a.it",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 14
+    },
+    {
+      "nome": "",
+      "cognome": "",
+      "login": "",
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "id": 15
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "aaaaaaaaaaaaaaa",
+      "email": "aa@a.it",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 16
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "aaaaaaaaa",
+      "email": "a@a-i",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 17
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "aaaaa",
+      "email": "aa@a.it",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 18
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "aaaa",
+      "email": "aa@a.it",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 19
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "GGarganiaaaaaaa",
+      "email": "aa@a.it",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 20
     }
   ],
   "libri": [
     {
       "id": 1001,
-      "titolo": "a",
-      "autore": "b",
-      "trama": "c",
-      "primaEdizione": "2000",
-      "creatore": "piero"
+      "titolo": "piccole donne",
+      "autore": "Louisa May Alcott",
+      "trama": "Adattamento del classico di Louise May Alcott, che narra la storia di quattro sorelle durante la guerra civile americana. In viaggio con la madre, Amy, Jo, Beth e Meg scoprono l'amore e l'importanza dei legami familiari.",
+      "primaEdizione": 1868,
+      "creatore": "piero",
+      "aperto": false
     },
     {
       "id": 1002,
@@ -82,31 +209,33 @@
       "autore": "b",
       "trama": "c",
       "primaEdizione": "2000",
-      "creatore": "piero"
-    },
-    {
-      "id": 1005,
-      "titolo": "z",
-      "autore": "b",
-      "trama": "c",
-      "primaEdizione": "2000",
-      "creatore": "admin"
-    },
-    {
-      "id": 1004,
-      "titolo": "z",
-      "autore": "b",
-      "trama": "c",
-      "primaEdizione": "2000",
-      "creatore": "admin"
+      "creatore": "piero",
+      "aperto": true
     },
     {
       "id": 1008,
-      "titolo": "z",
-      "autore": "b",
-      "trama": "c",
-      "primaEdizione": "2000",
-      "creatore": "Gianluca"
+      "titolo": "Il piccolo principe",
+      "autore": "Antoine de Saint-Exupéry",
+      "trama": "Un pilota di aerei, precipitato nel deserto del Sahara, incontra inaspettatamente un bambino che gli chiede di disegnargli una pecora. Dopo vari tentativi non riusciti, il pilota disegna una scatola, dicendo che la pecora desiderata è all'interno; finalmente il disegno viene accettato. Poco per volta fanno amicizia, ed il bambino spiega di vivere su di un lontano asteroide, sul quale abita solo lui, tre vulcani di cui uno inattivo e una piccola rosa, molto vanitosa, che lui cura.",
+      "primaEdizione": 1943,
+      "creatore": "Gianluca",
+      "aperto": false
+    },
+    {
+      "id": "1988",
+      "titolo": "Corso Angular",
+      "autore": "Intent",
+      "trama": "corso base front end",
+      "primaEdizione": 2020,
+      "creatore": "Stefano"
+    },
+    {
+      "id": "1999",
+      "titolo": "Corso Java",
+      "autore": "Federica Renzetti",
+      "trama": "corso base di back end",
+      "primaEdizione": 2019,
+      "creatore": "Stefano"
     }
   ]
 }

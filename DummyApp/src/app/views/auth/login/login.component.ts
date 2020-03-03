@@ -17,7 +17,7 @@ class Login {
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit, OnDestroy {
+export class LoginComponent implements OnInit, OnDestroy { //, OnDestroy
   subscription: Subscription;
   myForm: Login = new Login();
   booleanaErr = true;

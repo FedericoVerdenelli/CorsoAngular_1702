@@ -1,4 +1,12 @@
 <div class="col-lg-9" style="margin: auto;">
+  <!-- bottone per aggiungere libri -->
+  <div style="padding: 5px;">
+    <i  class="fas fa-book logo"
+        style="cursor: pointer;"
+        (click)="openAggiungi(aggiungiLibroModal)">Aggiungi Libro
+    </i>
+  </div>
+  <!-- tabella lista libri -->
   <table class="table table-hover">
     <thead>
       <tr>
@@ -20,12 +28,163 @@
         <td (click)="mostra(libro)" *ngIf="libro.aperto">{{libro.trama}}</td>
         <td (click)="mostra(libro)">{{libro.primaEdizione}}</td>
         <td (click)="mostra(libro)">{{libro.creatore}}</td>
-        <td><i class="fas fa-pencil-alt" style="z-index: 20;" (click)="open(content)"></i></td>
+        <td><i class="fas fa-pencil-alt" style="z-index: 20;" (click)="open(editProfileModal,libro)"></i></td>
       </tr>
     </tbody>
   </table>
-  <div >
 
-  </div>
+  <!-- modal modifica libro -->
+  <ng-template #editProfileModal let-modal>
+    <form style="padding: 5%;">
+      <div class="modal-header blu row">
+        <div class="d-flex justify-content-start">
+          <h4 class="modal-title" style="color: white;" id="modal-basic-title">Modifica Libro</h4>
+        </div>
+        <div class="d-flex justify-content-end">
+          <button type="button" class="close" style="color: white;" aria-label="Close" (click)="close()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+      <div style="margin-top: 5px;">
+        <div class="form-group">
+          <label for="codice">Codice</label>
+          <input  type="text"
+                  class="form-control"
+                  id="codice"
+                  value={{librolibro.id}} readonly>
+        </div>
+        <div class="form-group">
+          <label for="titolo">Titolo</label>
+          <input  type="text"
+                  class="form-control"
+                  id="titolo"
+                  value={{librolibro.titolo}}
+                  [(ngModel)]="librolibro.titolo"
+                  [ngModelOptions]="{standalone: true}">
+                  <!-- per usare ngModal senza assegnare un attributo di tipo name,
+                    bisogna aggiungere standalone: true, altrimenti il modal non
+                  funziona correttamente-->
+        </div>
+        <div class="form-group">
+          <label for="autore">Autore</label>
+          <input  type="text"
+                  class="form-control"
+                  id="autore"
+                  value={{librolibro.autore}}
+                  [(ngModel)]="librolibro.autore"
+                  [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="form-group">
+          <label for="edizione">Prima Edizione</label>
+          <input  type="number"
+                  class="form-control"
+                  id="edizione"
+                  value={{librolibro.primaEdizione}}
+                  [(ngModel)]="librolibro.primaEdizione"
+                  [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="form-group">
+          <label for="edizione">Trama</label>
+          <!-- textarea serve per un input più grande in cui ho bisogno di scrivere del testo -->
+          <textarea type="text"
+                    class="form-control"
+                    id="trama"
+                    value={{librolibro.trama}}
+                    [(ngModel)]="librolibro.trama"
+                    [ngModelOptions]="{standalone: true}"
+                    style="height: 80px;">
+          </textarea>
+        </div>
+      </div>
+      <!-- bottoni per il salvataggio o per eliminazione del libro -->
+      <div class="col-lg-12 row d-flex justify-content-center" style="margin: 0px;">
+        <div class="col-lg-6">
+          <button type="submit"
+                  class="btn btn-success col-lg-12"
+                  (click)="salva(librolibro)">SALVA
+          </button>
+        </div>
+        <div class="col-lg-6">
+          <button type="button"
+                  class="btn btn-danger col-lg-12"
+                  (click)="elimina(librolibro.id)">ELIMINA</button>
+        </div>
+      </div>
+    </form>
+  </ng-template>
+
+  <!-- modal aggiungi libro -->
+  <ng-template #aggiungiLibroModal let-modal>
+    <form style="padding: 5%;">
+      <div class="modal-header blu row">
+        <div class="d-flex justify-content-start">
+          <h4 class="modal-title" style="color: white;" id="modal-basic-title">Aggiungi Libro</h4>
+        </div>
+        <div class="d-flex justify-content-end">
+          <button type="button" class="close" style="color: white;" aria-label="Close" (click)="close()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+      <div style="margin-top: 5px;">
+        <div class="form-group">
+          <label for="codice">Codice</label>
+          <input  type="text"
+                  class="form-control"
+                  id="codice"
+                  [(ngModel)]="librolibro.id"
+                  [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="form-group">
+          <label for="titolo">Titolo</label>
+          <input  type="text"
+                  class="form-control"
+                  id="titolo"
+                  [(ngModel)]="librolibro.titolo"
+                  [ngModelOptions]="{standalone: true}">
+                  <!-- per usare ngModal senza assegnare un attributo di tipo name,
+                    bisogna aggiungere standalone: true, altrimenti il modal non
+                  funziona correttamente-->
+        </div>
+        <div class="form-group">
+          <label for="autore">Autore</label>
+          <input  type="text"
+                  class="form-control"
+                  id="autore"
+                  [(ngModel)]="librolibro.autore"
+                  [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="form-group">
+          <label for="edizione">Prima Edizione</label>
+          <input  type="number"
+                  class="form-control"
+                  id="edizione"
+                  [(ngModel)]="librolibro.primaEdizione"
+                  [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="form-group">
+          <label for="edizione">Trama</label>
+          <!-- textarea serve per un input più grande in cui ho bisogno di scrivere del testo -->
+          <textarea type="text"
+                    class="form-control"
+                    id="trama"
+                    [(ngModel)]="librolibro.trama"
+                    [ngModelOptions]="{standalone: true}"
+                    style="height: 80px;">
+          </textarea>
+        </div>
+      </div>
+      <!-- bottoni per il salvataggio o per eliminazione del libro -->
+      <div class="col-lg-12 row d-flex justify-content-center" style="margin: 0px;">
+        <div class="col-lg-6">
+          <button type="submit"
+                  class="btn btn-success col-lg-12"
+                  (click)="crea(librolibro)">CREA
+          </button>
+        </div>
+      </div>
+    </form>
+  </ng-template>
 </div>
 

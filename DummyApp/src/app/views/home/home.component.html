@@ -1,0 +1,326 @@
+
+<div class="container">
+  <div class=" card bg-dark text-white" >
+    <img class="card-img" src="assets/bookshelf.jpg" alt="Card image" style=" height: 20rem;">
+    <div class="card-img-overlay">
+      <h3 class="card-title font-italic text-center">Benvenuti nella nostra Web application</h3>
+      <h5 class="card-text">In questo progetto realizzato da un team di 4 persone abbiamo simulato una esperienza lavorativa creando una web application da zero.</h5>
+      <h5 class="card-text">Nell'applicazione è possibile formare con chi si vuole un catalogo di libri letti.</h5>
+    </div>
+    <div class="card-img-overlay h-100 d-flex flex-column justify-content-end">
+      <p class="card-text font-weight-normal font-italic text-center">Qui sotto son presenti informazioni aggiuntive! Buona lettura.</p>
+</div>
+  </div>
+  <hr>
+  <div class="card-deck">
+    <div class="card">
+      <img class="card-img-top" src="assets/frontend.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Tecnologie frontend :</h5>
+        <ul class="card-text">
+          <li>Visual studio code</li>
+          <li>Angular 8</li>
+          <li>NodeJs</li>
+          <li>Ng Bootstrap</li>
+          <li>Json-server</li>
+        </ul>
+        <p class="card-text"><small class="text-muted align-text-bottom" (click)="openFrontend(frontend)" >clicca per maggiori dettagli</small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="assets/backend.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Tecnologie backend :</h5>
+        <ul class="card-text">
+          <li>Visual studio code</li>
+          <li>Angular 8</li>
+          <li>NodeJs</li>
+          <li>Ng Bootstrap</li>
+          <li>Json-server</li>
+        </ul>
+        <p class="card-text"><small class="text-muted align-text-bottom" (click)="openBackend(backend)">clicca per maggiori dettagli</small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="assets/about.jpg" alt="Card image cap">
+      <div class="card-body ">
+        <h5 class="card-title">Il team di sviluppo :</h5>
+        <ul class="card-text">
+          <li>Gianluca Gargani </li>
+          <li>Stefano Cirulli </li>
+          <li>Noemi Panzironi </li>
+          <li>Emanuele Ascani </li>
+        </ul>
+        <div style="height: 23px;"></div>
+        <p class="card-text" ><small class="text-muted" (click)="openAbout(about)">clicca per maggiori dettagli</small></p>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="text-center">
+  <h5 class="card-text">Un ringraziamento particolare a Marco Gerosi e Federico Verdenelli, i nostri mentori.</h5>
+      <blockquote class="blockquote">
+        <p class="mb-0">"Ma che è stammerda?"</p>
+        <footer class="blockquote-footer">Federico Verdenelli -<cite title="Source Title">Corso Intent</cite></footer>
+      </blockquote>
+      <blockquote class="blockquote">
+        <p class="mb-0">"Raga guardate che sito ho fatto ieri notte"</p>
+        <footer class="blockquote-footer">Marco Gerosi -<cite title="Source Title">Corso Intent</cite></footer>
+      </blockquote>
+    </div>
+</div>
+
+<!-- --------------------------FRONTEND-------------------------------- -->
+
+<ng-template #frontend let-modal>
+
+  <div class="modal-header" style="background-color: rgb(40, 49, 72); color:white;">
+    <h4 class="modal-title">Maggiori dettagli sulle tecnologie frontend</h4>
+    <button type="button" class="close" (click)="modal.dismiss()">
+      <span>&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row col-lg-12">
+      <h5>Visual Studio Code :</h5>
+      <div class="d-flex align-items-center col-lg-0">
+
+        <p> Visual studio code è un editor al quale può essere attaccata la quantita' di plugin necessaria allo
+            sviluppo di un progetto trasfromandolo nell'atto pratico in un ide, la sua forza è l'elasticità di
+            poterlo usare per sviluppare una ampissima varietà di tipi di progetto mantenendo sempre l'editor
+            come base.
+        </p>
+
+      </div>
+    </div>
+    <div class="row col-lg-12">
+      <h5>Angular :</h5>
+      <div class="d-flex align-items-center col-lg-0">
+
+        <p>  Angualar è un framwork improntato prettamente a sviluppare Single Page Applications nella parte frontend
+          di una applicazione, la sua utilità consiste nel modularizzare all'estremo il codice frontend per lo sviluppatore
+          rendendolo più leggibile e veloce da sviluppare, nel pratico introduce il concetto di componente che va a
+          sostituire le directive ed è suddiviso in 4 tipi di files: typescript, spec typescript, html e css.
+
+          Il componente è una rappresentazione di una entità in una pagina, è contenuto all'interno di un modulo, i moduli
+          hanno lo scopo di modularizzare l'utilizzo dei componenti e di ottimizzarne favorendo il riutilizzo del codice,
+          angular carica i componenti partendo dai moduli.
+
+          l'ultima parte fondamentale di angular dopo il componente e il modulo sono i servizi, suddetti si utilizzano
+          per funzioni che vengono ripetute all'interno di diversi componenti e hanno la peculiarità di essere vivi
+          durante tutto l'utilizzo dell'applicazione.
+        </p>
+
+      </div>
+    </div>
+    <div class="row col-lg-12">
+      <h5>GitBash :</h5>
+      <div class="d-flex align-items-center col-lg-0">
+
+        <p> GitBash è un sistema di versioning che offre repositories accessibili tramite terminale,
+          il team si è coordinato dividendosi il lavoro appoggiandosi a una repository.
+        </p>
+
+      </div>
+    </div>
+    <div class="row col-lg-12">
+      <h5>Ng Bootstrap :</h5>
+      <div class="d-flex align-items-center col-lg-0">
+
+        <p> Bootstrap è una raccolta di strumenti liberi per la creazione di siti e applicazioni per il Web. Essa contiene
+          modelli di progettazione basati su HTML e CSS, sia per la tipografia,che per le varie componenti dell'interfaccia,
+           come moduli, pulsanti e navigazione, così come alcune estensioni opzionali di JavaScript.
+        </p>
+
+      </div>
+    </div>
+    <div class="row col-lg-12">
+      <h5>Json-server :</h5>
+      <div class="d-flex align-items-center col-lg-0">
+
+        <p> Json server è una REST API simulata, nell'applicazione è stata utilizzata per simulare il backend e consentire
+          al team di utilizzare il pattern di sviluppo Agile, grazie a json server gli sviluppatori frontend e backend
+          hanno potuto lavorare contemporaneamente.
+        </p>
+
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+  </div>
+</ng-template>
+
+<!-- --------------------------BACKEND-------------------------------- -->
+
+<ng-template #backend let-modal>
+
+  <div class="modal-header" style="background-color: rgb(40, 49, 72); color:white;">
+    <h4 class="modal-title">Maggiori dettagli sulle tecnologie frontend</h4>
+    <button type="button" class="close" (click)="modal.dismiss()">
+      <span>&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row col-lg-12">
+      <h5>Visual Studio Code :</h5>
+      <div class="d-flex align-items-center col-lg-0">
+
+        <p> Visual studio code è un editor al quale può essere attaccata la quantita' di plugin necessaria allo
+            sviluppo di un progetto trasfromandolo nell'atto pratico in un ide, la sua forza è l'elasticità di
+            poterlo usare per sviluppare una ampissima varietà di tipi di progetto mantenendo sempre l'editor
+            come base.
+        </p>
+
+      </div>
+    </div>
+    <div class="row col-lg-12">
+      <h5>Angular :</h5>
+      <div class="d-flex align-items-center col-lg-0">
+
+        <p> Visual studio code è un editor al quale può essere attaccata la quantita' di plugin necessaria allo
+            sviluppo di un progetto trasfromandolo nell'atto pratico in un ide, la sua forza è l'elasticità di
+            poterlo usare per sviluppare una ampissima varietà di tipi di progetto mantenendo sempre l'editor
+            come base.
+        </p>
+
+      </div>
+    </div>
+    <div class="row col-lg-12">
+      <h5>NodeJs :</h5>
+      <div class="d-flex align-items-center col-lg-0">
+
+        <p> Visual studio code è un editor al quale può essere attaccata la quantita' di plugin necessaria allo
+            sviluppo di un progetto trasfromandolo nell'atto pratico in un ide, la sua forza è l'elasticità di
+            poterlo usare per sviluppare una ampissima varietà di tipi di progetto mantenendo sempre l'editor
+            come base.
+        </p>
+
+      </div>
+    </div>
+    <div class="row col-lg-12">
+      <h5>Ng Bootstrap :</h5>
+      <div class="d-flex align-items-center col-lg-0">
+
+        <p> Visual studio code è un editor al quale può essere attaccata la quantita' di plugin necessaria allo
+            sviluppo di un progetto trasfromandolo nell'atto pratico in un ide, la sua forza è l'elasticità di
+            poterlo usare per sviluppare una ampissima varietà di tipi di progetto mantenendo sempre l'editor
+            come base.
+        </p>
+
+      </div>
+    </div>
+    <div class="row col-lg-12">
+      <h5>Json-server :</h5>
+      <div class="d-flex align-items-center col-lg-0">
+
+        <p> Visual studio code è un editor al quale può essere attaccata la quantita' di plugin necessaria allo
+            sviluppo di un progetto trasfromandolo nell'atto pratico in un ide, la sua forza è l'elasticità di
+            poterlo usare per sviluppare una ampissima varietà di tipi di progetto mantenendo sempre l'editor
+            come base.
+        </p>
+
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+  </div>
+</ng-template>
+
+<!-- --------------------------ABOUT-------------------------------- -->
+
+<ng-template #about let-modal>
+
+  <div class="modal-header" style="background-color: rgb(40, 49, 72); color:white;">
+    <h4 class="modal-title">Maggiori dettagli sul team di sviluppo</h4>
+    <button type="button" class="close" (click)="modal.dismiss()">
+      <span>&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <hr>
+    <div class="row col-lg-12">
+      <h5>Gianluca Gargani :</h5>
+      </div>
+      <div class="d-flex align-items-center col-lg-0">
+        <ul >
+          <li>Ruolo :</li>
+          <p> Sviluppatore frontend</p>
+          <li>Eta' :</li>
+          <p> 25</p>
+          <li>Descrizione :</li>
+          <p> Viva la programmazione!</p>
+          <li>Grado :</li>
+          <p> Sviluppatore Junior</p>
+        </ul>
+    </div>
+    <hr>
+    <div class="row col-lg-12">
+      <h5>Stefano Cirulli :</h5>
+      </div>
+      <div class="d-flex align-items-center col-lg-0">
+        <ul >
+          <li>Ruolo :</li>
+          <p> Sviluppatore frontend</p>
+          <li>Eta' :</li>
+          <p> 31</p>
+          <li>Descrizione :</li>
+          <p> Viva le ciabatte elettriche!</p>
+          <li>Grado :</li>
+          <p> Sviluppatore Junior</p>
+        </ul>
+    </div>
+    <hr>
+    <div class="row col-lg-12">
+      <h5>Noemi Panzironi :</h5>
+      </div>
+      <div class="d-flex align-items-center col-lg-0">
+        <ul >
+          <li>Ruolo :</li>
+          <p> Sviluppatore frontend</p>
+          <li>Eta' :</li>
+          <p> 21</p>
+          <li>Descrizione :</li>
+          <p> Viva la pasta coi wrustel!</p>
+          <li>Grado :</li>
+          <p> Sviluppatore Junior</p>
+        </ul>
+    </div>
+    <hr>
+    <div class="row col-lg-12">
+      <h5>Emanuele Ascani :</h5>
+      </div>
+      <div class="d-flex align-items-center col-lg-0">
+        <ul >
+          <li>Ruolo :</li>
+          <p> Sviluppatore backend</p>
+          <li>Eta' :</li>
+          <p> 20</p>
+          <li>Descrizione :</li>
+          <p> Viva la 500!</p>
+          <li>Grado :</li>
+          <p> Sviluppatore Junior</p>
+        </ul>
+    </div>
+
+  </div>
+  <div class="modal-footer">
+  </div>
+</ng-template>
+<!-- <h5>NodeJs</h5>
+        <p> Angualar è un framwork improntato prettamente a sviluppare Single Page Applications nella parte frontend
+          di una applicazione, la sua utilità consiste nel modularizzare all'estremo il codice frontend per lo sviluppatore
+          rendendolo più leggibile e veloce da sviluppare, nel pratico introduce il concetto di componente che va a
+          sostituire le directive ed è suddiviso in 4 tipi di files:
+      </p>
+      <h5>Ng Bootstrap</h5>
+        <p> Angualar è un framwork improntato prettamente a sviluppare Single Page Applications nella parte frontend
+          di una applicazione, la sua utilità consiste nel modularizzare all'estremo il codice frontend per lo sviluppatore
+          rendendolo più leggibile e veloce da sviluppare, nel pratico introduce il concetto di componente che va a
+          sostituire le directive ed è suddiviso in 4 tipi di files:
+      </p>
+      <h5>Json-server</h5>
+        <p> Angualar è un framwork improntato prettamente a sviluppare Single Page Applications nella parte frontend
+          di una applicazione, la sua utilità consiste nel modularizzare all'estremo il codice frontend per lo sviluppatore
+          rendendolo più leggibile e veloce da sviluppare, nel pratico introduce il concetto di componente che va a
+          sostituire le directive ed è suddiviso in 4 tipi di files:
+      </p> -->

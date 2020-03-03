@@ -58,7 +58,7 @@ export class DettaglioUtenteComponent implements OnInit {
   openNome(nome){
     this.modalService.open(nome);
   }
-  
+
   salvaPassword(){
   }
 

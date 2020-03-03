@@ -1,6 +1,7 @@
 import { AuthService } from './../../../services/auth.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 export class SignUpForm {
   nome: string;
@@ -32,11 +33,17 @@ export class SignUpForm {
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent implements OnInit, OnDestroy {
   myForm: SignUpForm = new SignUpForm();
   myInput;
   signUpForm;
   errore = true;
+  sessionEmpty;
+
+  subscription: Subscription;
+  booleanaErr = true;
+  hoCliccato = false;
+
   constructor(private authServ: AuthService) {}
 
   ngOnInit() {
@@ -62,9 +69,35 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit(e) {
+
+
+  }
+
+  registration() {
     if (this.errore) {
       this.authServ.signUp(this.myForm);
+      this.hoCliccato = true;
+      this.subscription = this.authServ
+      .getUserAuth()
+      .subscribe(userAuth => {
+        if (userAuth.autenticato && this.hoCliccato) {
+          this.booleanaErr = true;
+        } else {
+          this.booleanaErr = false;
+        }
+      });
+      // if ( this.authServ.isEmpty(sessionStorage.getItem('isLogged'))) {
+      //   this.sessionEmpty = true;
+      // } else {
+      //   this.sessionEmpty = false;
+      // }
+      // if (this.sessionEmpty && this.hoCliccato) {
+      //   this.booleanaErr = true;
+      // } else {
+      //   this.booleanaErr = false;
+      // }
     }
+
   }
 
   controllaPsw(group: FormGroup) {
@@ -74,5 +107,9 @@ export class SignupComponent implements OnInit {
     if (this.myForm.password !== this.myForm.confirmPassword) {
       this.errore = false;
     }
+  }
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+
   }
 }
