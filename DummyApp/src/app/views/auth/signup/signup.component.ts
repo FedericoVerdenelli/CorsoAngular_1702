@@ -59,7 +59,6 @@ export class SignupComponent implements OnInit, OnDestroy {
       ]),
       password: new FormControl(this.myForm.password, [
         Validators.required,
-        Validators.required,
         Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')
       ]),
       confirmPassword: new FormControl(
