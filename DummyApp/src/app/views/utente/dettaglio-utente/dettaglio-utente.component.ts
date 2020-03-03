@@ -1,7 +1,9 @@
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { CrudService } from 'src/app/services/crud.service';
 
 export class UtenteForm {
+  id:number;
   nome: string;
   cognome: string;
   login: string;
@@ -10,6 +12,7 @@ export class UtenteForm {
   confirmPassword: string;
 
   constructor(
+    id?,
     nome = '',
     cognome = '',
     login = '',
@@ -17,6 +20,7 @@ export class UtenteForm {
     password = '',
     confirmPassword = ''
   ) {
+    this.id = id;
     this.nome = nome;
     this.cognome = cognome;
     this.login = login;
@@ -30,7 +34,6 @@ export class UtenteForm {
 @Component({
   selector: 'app-dettaglio-utente',
   templateUrl: './dettaglio-utente.component.html',
-  encapsulation: ViewEncapsulation.None,
   styleUrls: ['./dettaglio-utente.component.css']
 })
 export class DettaglioUtenteComponent implements OnInit {
@@ -38,7 +41,7 @@ export class DettaglioUtenteComponent implements OnInit {
   mostraUtente = JSON.parse(sessionStorage.getItem('isLogged'));
   modal: UtenteForm = new UtenteForm();
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, private crud: CrudService) { }
 
   ngOnInit() {
     console.log(this.mostraUtente);
@@ -57,10 +60,12 @@ export class DettaglioUtenteComponent implements OnInit {
   }
   
   salvaPassword(){
-    if (this.modal.confirmPassword === this.modal.password) {
-      console.log('autenticazione riuscita');
-    } else {
-      console.log('autenticazione fallita');
-    }
+  }
+
+  salvaNome(){
+    console.log(this.mostraUtente.nome);
+    this.crud.updateName(this.mostraUtente.nome);
+    console.log(this.mostraUtente);
+    this.modalService.dismissAll();
   }
 }
