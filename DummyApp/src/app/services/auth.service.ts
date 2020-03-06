@@ -15,7 +15,7 @@ class UserAuth  {
 // O NON CONTENERE LA VARIABILE AL QUALE E' ASSEGNATO MA PER EVITARE PROBLEMI VA CONTROLLATO CON UNA IF
 // L'OPERATORE '?' SI USA ANCHE COME SHORTCUT DI IF ELSE
 
-  constructor(autenticato, user?){
+  constructor(autenticato, user?) {
     this.autenticato = autenticato;
     user ? this.user = user : null;
 // LETTERELAMENTE USER E' VERO?(SARA' VERO SE E' STATO POPOLATO NEI PARAMETRI), SE TRUE ASSEGNA A USER IL PARAMETRO
@@ -81,7 +81,7 @@ export class AuthService {
         }
 
       });
-      if (!this.boolenaAuth){
+      if (!this.boolenaAuth) {
         const userAuth = new UserAuth(false);
         this.subject.next(userAuth);
       }
@@ -101,9 +101,10 @@ export class AuthService {
   }
   // QUESTO METODO SERVE DURANTE I LOGIN/REGISTRAZIONI PER CONTROLLARE SE SESSIONFACTORY E' STATO POPOLATO
   isEmpty(obj) {
-    for(var key in obj) {
-        if(obj.hasOwnProperty(key))
+    for(const key in obj) {
+        if (obj.hasOwnProperty(key)) {
             return false;
+        }
     }
     return true;
 }
