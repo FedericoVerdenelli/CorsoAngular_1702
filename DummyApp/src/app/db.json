@@ -236,6 +236,15 @@
       "trama": "corso base di back end",
       "primaEdizione": 2019,
       "creatore": "Stefano"
+    },
+    {
+      "id": "1505",
+      "titolo": "Harry Potter ",
+      "autore": "J.K. Rowling",
+      "trama": "un mago",
+      "primaEdizione": 1997,
+      "creatore": "Noemi",
+      "aperto": false
     }
   ]
 }
