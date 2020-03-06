@@ -64,8 +64,7 @@ export class DettaglioUtenteComponent implements OnInit {
 
   salvaNome(){
     console.log(this.mostraUtente.nome);
-    this.crud.updateName(this.mostraUtente.nome);
-    console.log(this.mostraUtente);
+    this.crud.updateName(this.mostraUtente);
     this.modalService.dismissAll();
   }
 }

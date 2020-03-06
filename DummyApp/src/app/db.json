@@ -41,7 +41,7 @@
       "password": "andrea"
     },
     {
-      "nome": "admin",
+      "nome": "a",
       "cognome": "root",
       "login": "admin",
       "email": "admin@admin.it",
@@ -205,12 +205,12 @@
     },
     {
       "id": 1003,
-      "titolo": "z",
+      "titolo": "ciao",
       "autore": "b",
       "trama": "c",
       "primaEdizione": "2000",
       "creatore": "piero",
-      "aperto": true
+      "aperto": false
     },
     {
       "id": 1008,
