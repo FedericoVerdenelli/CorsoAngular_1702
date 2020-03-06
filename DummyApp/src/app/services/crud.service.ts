@@ -36,7 +36,7 @@ export class CrudService {
   }
   // MODIFICA UTENTE
   updateUtente(utente: UtenteForm){
-    this.httpClient.put<Libro>(this.utentiUrl + '/' + utente.login, utente).subscribe();
+    this.httpClient.put<UtenteForm>(this.utentiUrl + '/' + utente.id, utente).subscribe();
   }
   // Modifica() {
   //   this.httpClient.put('http://localhost:3000/libri');
