@@ -41,4 +41,9 @@ export class CrudService {
   // Modifica() {
   //   this.httpClient.put('http://localhost:3000/libri');
   // }
+
+  // MODIFICA NOME UTENTE
+  updateName(user: UtenteForm) {
+    this.httpClient.put<UtenteForm>(this.utentiUrl + '/' + user.id, user).subscribe();
+  }
 }

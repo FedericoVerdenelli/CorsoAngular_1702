@@ -72,23 +72,25 @@
         <span>&times;</span>
       </button>
     </div>
-    <div class="modal-body">
+    <div class="modal-body form-group">
       <div class="row col-lg-12">
         <div class="d-flex align-items-center col-lg-5">
           <label>Inserisci nome</label>
         </div>
         <div class="col-lg-7">
           <input 
-          class="form-control input-lg"
-          type="password" 
+          for="first_name"
+          type="text"
+          class="form-control input-lg ng-invalid"
           style="margin-bottom: 5px;"
-          placeholder={{mostraUtente.nome}}
+          [(ngModel)]="mostraUtente.nome"
+          #nome="ngModel"
           />
         </div>
       </div>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-success" (click)="salva()">Salva</button>
+      <button type="button" class="btn btn-success" (click)="salvaNome()">Salva</button>
     </div>
   </ng-template>
 
