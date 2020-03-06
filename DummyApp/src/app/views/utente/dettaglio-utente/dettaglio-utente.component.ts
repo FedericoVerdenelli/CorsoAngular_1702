@@ -3,7 +3,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { CrudService } from 'src/app/services/crud.service';
 
 export class UtenteForm {
-  id:number;
+  id: number;
   nome: string;
   cognome: string;
   login: string;
@@ -47,25 +47,26 @@ export class DettaglioUtenteComponent implements OnInit {
     console.log(this.mostraUtente);
   }
 
-  openPassword(password){
+  openPassword(password) {
     this.modalService.open(password);
   }
 
-  openCognome(cognome){
+  openCognome(cognome) {
     this.modalService.open(cognome);
   }
 
-  openNome(nome){
+  openNome(nome) {
     this.modalService.open(nome);
   }
 
-  salvaPassword(){
+  salvaPassword() {
   }
 
-  salvaNome(){
+  salvaNome() {
     console.log(this.mostraUtente.nome);
-    this.crud.updateName(this.mostraUtente.nome);
-    console.log(this.mostraUtente);
+    this.crud.updateName(this.mostraUtente);
+    this.mostraUtente = sessionStorage.setItem('isLogged', JSON.stringify(this.mostraUtente));
+    window.location.reload();
     this.modalService.dismissAll();
   }
 }

@@ -1,6 +1,7 @@
 import { AuthService } from './../../../services/auth.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { Router, NavigationStart } from '@angular/router';
 
 class Login {
   user: string;
@@ -22,7 +23,14 @@ export class LoginComponent implements OnInit, OnDestroy { //, OnDestroy
   myForm: Login = new Login();
   booleanaErr = true;
   hoCliccato = false;
-  constructor(private authService: AuthService) {
+  booUserAuth = true;
+  routerSubscription: Subscription;
+  constructor(private authService: AuthService, private router: Router) {
+    this.routerSubscription = router.events.subscribe((event) => {
+      if (event instanceof NavigationStart) {
+        const browserRefresh = !router.navigated;
+      }
+    });
    }
 
   onSubmit(e) {
@@ -30,28 +38,29 @@ export class LoginComponent implements OnInit, OnDestroy { //, OnDestroy
   }
 
   ngOnInit() {
+    this.subscription = this.authService
+    .getUserAuth()
+    .subscribe(userAuth => {
+      console.log('proprieta di userAuth: '+ userAuth.autenticato);
+      this.booUserAuth = userAuth.autenticato;
+    });
   }
 
   autentication() {
 
     this.authService.login(this.myForm.user, this.myForm.password);
     this.hoCliccato = true;
-    this.subscription = this.authService
-      .getUserAuth()
-      .subscribe(userAuth => {
-        console.log('proprieta di userAuth: '+ userAuth.autenticato);
-        if (userAuth.autenticato && this.hoCliccato) {
-          this.booleanaErr = true;
-          console.log('Condizione di non mostra di errore ' + this.booleanaErr + 'valore di user autenticato ' + userAuth.autenticato);
-        } else {
-          this.booleanaErr = false;
-          console.log('Condizione di mostra paragrafo' + this.booleanaErr + ' user autenticato else della if  ' + userAuth.autenticato);
-        }
-      });
-
+    if (this.booUserAuth && this.hoCliccato) {
+      this.booleanaErr = true;
+      console.log('Condizione di non mostra di errore ' + this.booleanaErr + 'valore di user autenticato ' + this.booUserAuth);
+    } else {
+      this.booleanaErr = false;
+      console.log('Condizione di mostra paragrafo' + this.booleanaErr + ' user autenticato else della if  ' + this.booUserAuth);
+    }
   }
   ngOnDestroy() {
     this.subscription.unsubscribe();
+    this.routerSubscription.unsubscribe();
 
   }
 }

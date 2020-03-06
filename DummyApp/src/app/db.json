@@ -183,6 +183,33 @@
       "password": "a",
       "confirmPassword": "a",
       "id": 20
+    },
+    {
+      "nome": "aa",
+      "cognome": "aa",
+      "login": "GGarganiiiii",
+      "email": "aa@a.it",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 21
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "aaaaaaaaaaaaa",
+      "email": "aa@a.it",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 22
+    },
+    {
+      "nome": "aaa",
+      "cognome": "aaaa",
+      "login": "gianluca",
+      "email": "aa@a.it",
+      "password": "gianluca",
+      "confirmPassword": "gianluca",
+      "id": 23
     }
   ],
   "libri": [
@@ -205,12 +232,12 @@
     },
     {
       "id": 1003,
-      "titolo": "z",
+      "titolo": "ciao",
       "autore": "b",
       "trama": "c",
       "primaEdizione": "2000",
       "creatore": "piero",
-      "aperto": true
+      "aperto": false
     },
     {
       "id": 1008,
@@ -238,13 +265,20 @@
       "creatore": "Stefano"
     },
     {
-      "id": "1505",
-      "titolo": "Harry Potter ",
-      "autore": "J.K. Rowling",
-      "trama": "un mago",
-      "primaEdizione": 1997,
-      "creatore": "Noemi",
-      "aperto": false
+      "id": "corso",
+      "titolo": "corsa",
+      "autore": "piero",
+      "trama": "aoooooooooooooooooooooooooooooo",
+      "primaEdizione": 1999,
+      "creatore": "admin"
+    },
+    {
+      "id": "987654",
+      "titolo": "sono bello",
+      "autore": "infordata",
+      "trama": "ci hanno rotto il sederino!",
+      "primaEdizione": 2021,
+      "creatore": "adm"
     }
   ]
 }
