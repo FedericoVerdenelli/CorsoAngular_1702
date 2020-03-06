@@ -228,7 +228,8 @@
       "autore": "Dan Brown",
       "trama": "A Parigi, il curatore del Louvre, Jacques Saunière, viene ucciso per mano di uno strano monaco albino appartenente all'Opus Dei. Lo studioso di simbologia, il professor Robert Langdon, viene a sapere dell'omicidio e, condotto al Louvre, viene interrogato, poiché ritenuto colpevole della morte del curatore. Langdon, affiancato da Sophie Neveu, nipote del curatore ucciso, e successivamente anche dallo studioso sir Leigh Teabing, dovrà ripercorrere attraverso indizi nascosti in importanti opere d'arte, enigmi e misteriosi artefatti, il percorso del Santo Graal, uno dei più grandi misteri della storia. Tale percorso si incrocia con quello di un'antica e misteriosa società segreta nota come Priorato di Sion di cui Saunière faceva parte come Gran Maestro (livello più elevato), che nasconde un inconcepibile segreto che, se rivelato, potrebbe compromettere i fondamenti stessi del Cristianesimo, nella versione tramandata dalla Chiesa cattolica.",
       "primaEdizione": "2003",
-      "creatore": "user"
+      "creatore": "user",
+      "aperto": false
     },
     {
       "id": 1003,
@@ -278,7 +279,8 @@
       "autore": "infordata",
       "trama": "ci hanno rotto il sederino!",
       "primaEdizione": 2021,
-      "creatore": "adm"
+      "creatore": "adm",
+      "aperto": false
     }
   ]
 }
