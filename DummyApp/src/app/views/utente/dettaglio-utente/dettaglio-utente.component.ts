@@ -40,6 +40,7 @@ export class DettaglioUtenteComponent implements OnInit {
 
   mostraUtente = JSON.parse(sessionStorage.getItem('isLogged'));
   modal: UtenteForm = new UtenteForm();
+  errorePassword;
 
   constructor(private modalService: NgbModal, private crud: CrudService) { }
 
@@ -59,14 +60,23 @@ export class DettaglioUtenteComponent implements OnInit {
     this.modalService.open(nome);
   }
 
-  salvaPassword() {
-  }
-
-  salvaNome() {
+  salva() {
     console.log(this.mostraUtente.nome);
     this.crud.updateName(this.mostraUtente);
     this.mostraUtente = sessionStorage.setItem('isLogged', JSON.stringify(this.mostraUtente));
     window.location.reload();
     this.modalService.dismissAll();
+  }
+
+  salvaPassword() {
+    this.errorePassword = false;
+    if (this.mostraUtente.password === this.mostraUtente.confirmPassword) {
+      this.crud.updateName(this.mostraUtente);
+      console.log('DettaglioUtenteComponent -> salvaPassword -> this.mostraUtente', this.mostraUtente);
+      this.modalService.dismissAll();
+    } else {
+      this.errorePassword = true;
+    }
+
   }
 }
