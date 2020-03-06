@@ -41,7 +41,7 @@
       "password": "andrea"
     },
     {
-      "nome": "a",
+      "nome": "admin",
       "cognome": "root",
       "login": "admin",
       "email": "admin@admin.it",
@@ -271,6 +271,14 @@
       "trama": "aoooooooooooooooooooooooooooooo",
       "primaEdizione": 1999,
       "creatore": "admin"
+    },
+    {
+      "id": "987654",
+      "titolo": "sono bello",
+      "autore": "infordata",
+      "trama": "ci hanno rotto il sederino!",
+      "primaEdizione": 2021,
+      "creatore": "adm"
     }
   ]
 }

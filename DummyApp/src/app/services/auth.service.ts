@@ -51,7 +51,7 @@ export class AuthService {
         }
 
       });
-      if (this.booleanaRegistr){
+      if (this.booleanaRegistr) {
         const userAuth = new UserAuth( true, nuovoUtente);
         sessionStorage.setItem('isLogged', JSON.stringify(nuovoUtente));
         this.subject.next(userAuth);
@@ -101,7 +101,7 @@ export class AuthService {
   }
   // QUESTO METODO SERVE DURANTE I LOGIN/REGISTRAZIONI PER CONTROLLARE SE SESSIONFACTORY E' STATO POPOLATO
   isEmpty(obj) {
-    for(const key in obj) {
+    for (const key in obj) {
         if (obj.hasOwnProperty(key)) {
             return false;
         }
