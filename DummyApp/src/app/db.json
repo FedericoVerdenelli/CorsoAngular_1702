@@ -14,7 +14,8 @@
       "cognome": "Panzironi",
       "login": "NPanzironi",
       "email": "npanzironi@gmail.com",
-      "password": "noemi"
+      "password": "noemis",
+      "confirmPassword": "noemis"
     },
     {
       "id": 2,
@@ -203,12 +204,12 @@
       "id": 22
     },
     {
-      "nome": "aaa",
-      "cognome": "aaaa",
+      "nome": "Piero",
+      "cognome": "Ama",
       "login": "gianluca",
       "email": "aa@a.it",
-      "password": "gianluca",
-      "confirmPassword": "gianluca",
+      "password": "piero",
+      "confirmPassword": "piero",
       "id": 23
     }
   ],
