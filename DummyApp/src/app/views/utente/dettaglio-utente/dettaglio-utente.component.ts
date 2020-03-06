@@ -64,8 +64,9 @@ export class DettaglioUtenteComponent implements OnInit {
 
   salvaNome(){
     console.log(this.mostraUtente.nome);
-    this.crud.updateName(this.mostraUtente.nome);
-    console.log(this.mostraUtente);
+    this.crud.updateName(this.mostraUtente);
+    this.mostraUtente = sessionStorage.setItem('isLogged', JSON.stringify(this.mostraUtente));
+    window.location.reload();
     this.modalService.dismissAll();
   }
 }

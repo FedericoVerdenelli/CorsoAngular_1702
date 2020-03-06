@@ -232,12 +232,12 @@
     },
     {
       "id": 1003,
-      "titolo": "z",
+      "titolo": "ciao",
       "autore": "b",
       "trama": "c",
       "primaEdizione": "2000",
       "creatore": "piero",
-      "aperto": true
+      "aperto": false
     },
     {
       "id": 1008,
@@ -263,6 +263,22 @@
       "trama": "corso base di back end",
       "primaEdizione": 2019,
       "creatore": "Stefano"
+    },
+    {
+      "id": "corso",
+      "titolo": "corsa",
+      "autore": "piero",
+      "trama": "aoooooooooooooooooooooooooooooo",
+      "primaEdizione": 1999,
+      "creatore": "admin"
+    },
+    {
+      "id": "987654",
+      "titolo": "sono bello",
+      "autore": "infordata",
+      "trama": "ci hanno rotto il sederino!",
+      "primaEdizione": 2021,
+      "creatore": "adm"
     }
   ]
 }
