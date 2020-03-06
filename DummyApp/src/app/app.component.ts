@@ -1,4 +1,4 @@
-import { element } from 'protractor';
+
 import { AuthService } from './services/auth.service';
 import { Component, Input, OnDestroy, OnInit, OnChanges } from '@angular/core';
 import { Subscription } from 'rxjs';
@@ -21,13 +21,13 @@ export class AppComponent implements OnDestroy, OnInit {
 
   constructor(private servizioAcc: AuthService, private router: Router) {
     this.routerSubscription = router.events.subscribe((event) => {
-      if (event instanceof NavigationStart) {
-        const browserRefresh = !router.navigated;
-        // console.log('Refreshato');
-        // if (!browserRefresh){
-        //   this.mostraUtente = JSON.parse(sessionStorage.getItem('isLogged'));
-        // }
-      }
+      // if (event instanceof NavigationStart) {
+      //   const browserRefresh = !router.navigated;
+      //   console.log('Refreshato');
+      //   if (!browserRefresh){
+      //     this.mostraUtente = JSON.parse(sessionStorage.getItem('isLogged'));
+      //   }
+      // }
     });
   }
 
@@ -37,15 +37,16 @@ export class AppComponent implements OnDestroy, OnInit {
       .subscribe(userAuth => {
         console.log('triggherato il subject: ', userAuth);
         this.autorizzato = userAuth.autenticato;
+        console.log('controllo un attimo: ', userAuth.autenticato);
         userAuth.autenticato ? this.mostraUtente = {...userAuth.user} : null;
       });
-    // if (sessionStorage.getItem('isLogged')) {
-    //     this.autorizzato = true;
-    //     console.log(sessionStorage.getItem('isLogged') + 'sono in app');
-    //     this.mostraUtente = JSON.parse(sessionStorage.getItem('isLogged'));
-    //   } else {
-    //     this.autorizzato = false;
-    //   }
+    if (sessionStorage.getItem('isLogged')) {
+        this.autorizzato = true;
+        console.log(sessionStorage.getItem('isLogged') + 'sono in app');
+        this.mostraUtente = JSON.parse(sessionStorage.getItem('isLogged'));
+      } else {
+        this.autorizzato = false;
+      }
 
   }
 

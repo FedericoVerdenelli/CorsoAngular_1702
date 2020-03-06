@@ -43,10 +43,15 @@ export class SignupComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   booleanaErr = true;
   hoCliccato = false;
-
+  boolUserAuth = true;
   constructor(private authServ: AuthService) {}
 
   ngOnInit() {
+    this.subscription = this.authServ
+    .getUserAuth()
+    .subscribe(userAuth => {
+      this.boolUserAuth = userAuth.autenticato;
+    });
     this.signUpForm = new FormGroup({
       nome: new FormControl(this.myForm.nome, Validators.required),
       cognome: new FormControl(this.myForm.cognome, Validators.required),
@@ -66,6 +71,8 @@ export class SignupComponent implements OnInit, OnDestroy {
         Validators.required
       ),
     });
+
+
   }
 
   onSubmit(e) {
@@ -77,15 +84,12 @@ export class SignupComponent implements OnInit, OnDestroy {
     if (this.errore) {
       this.authServ.signUp(this.myForm);
       this.hoCliccato = true;
-      this.subscription = this.authServ
-      .getUserAuth()
-      .subscribe(userAuth => {
-        if (userAuth.autenticato && this.hoCliccato) {
+      if (this.boolUserAuth && this.hoCliccato) {
           this.booleanaErr = true;
         } else {
           this.booleanaErr = false;
         }
-      });
+
       // if ( this.authServ.isEmpty(sessionStorage.getItem('isLogged'))) {
       //   this.sessionEmpty = true;
       // } else {

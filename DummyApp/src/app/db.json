@@ -183,6 +183,33 @@
       "password": "a",
       "confirmPassword": "a",
       "id": 20
+    },
+    {
+      "nome": "aa",
+      "cognome": "aa",
+      "login": "GGarganiiiii",
+      "email": "aa@a.it",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 21
+    },
+    {
+      "nome": "a",
+      "cognome": "a",
+      "login": "aaaaaaaaaaaaa",
+      "email": "aa@a.it",
+      "password": "a",
+      "confirmPassword": "a",
+      "id": 22
+    },
+    {
+      "nome": "aaa",
+      "cognome": "aaaa",
+      "login": "gianluca",
+      "email": "aa@a.it",
+      "password": "gianluca",
+      "confirmPassword": "gianluca",
+      "id": 23
     }
   ],
   "libri": [
@@ -236,6 +263,14 @@
       "trama": "corso base di back end",
       "primaEdizione": 2019,
       "creatore": "Stefano"
+    },
+    {
+      "id": "corso",
+      "titolo": "corsa",
+      "autore": "piero",
+      "trama": "aoooooooooooooooooooooooooooooo",
+      "primaEdizione": 1999,
+      "creatore": "admin"
     }
   ]
 }
