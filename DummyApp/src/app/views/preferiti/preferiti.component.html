@@ -1,0 +1,27 @@
+<div class="col-lg-9" style="margin: auto;">
+  <!-- tabella lista libri -->
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Codice</th>
+        <th scope="col">Titolo</th>
+        <th scope="col">Autore</th>
+        <th scope="col">Trama</th>
+        <th scope="col">Prima Edizione</th>
+        <th scope="col">Inserito da</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="cursor: pointer;" *ngFor="let libro of listaLibri">
+        <th (click)="mostra(libro)" scope="row">{{libro.id}}</th>
+        <td (click)="mostra(libro)">{{libro.titolo}}</td>
+        <td (click)="mostra(libro)">{{libro.autore}}</td>
+        <td (click)="mostra(libro)" *ngIf="!libro.aperto">Clicca per leggere la trama</td>
+        <td (click)="mostra(libro)" *ngIf="libro.aperto">{{libro.trama}}</td>
+        <td (click)="mostra(libro)">{{libro.primaEdizione}}</td>
+        <td (click)="mostra(libro)">{{libro.creatore}}</td>
+
+      </tr>
+    </tbody>
+  </table>
