@@ -73,7 +73,7 @@ export class CatalogoLibriComponent implements OnInit {
   openAggiungi(aggiungiLibroModal) {
     this.modalService.open(aggiungiLibroModal);
   }
-  salva(libro){
+  salva(libro) {
     this.librolibro = libro;
     console.log(libro);
     this.crud.updateLibro(this.librolibro);
@@ -84,6 +84,7 @@ export class CatalogoLibriComponent implements OnInit {
     this.crud.deleteLibro(id);
     console.log(id);
     this.modalService.dismissAll();
+    window.location.reload();
   }
   crea(libro) {
     this.librolibro.creatore = this.mostraUtente.nome;

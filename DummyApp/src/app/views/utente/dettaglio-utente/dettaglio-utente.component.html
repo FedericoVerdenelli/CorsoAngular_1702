@@ -78,7 +78,7 @@
           <label>Inserisci nome</label>
         </div>
         <div class="col-lg-7">
-          <input 
+          <input
           for="first_name"
           type="text"
           class="form-control input-lg ng-invalid"
@@ -90,7 +90,7 @@
       </div>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-success" (click)="salvaNome()">Salva</button>
+      <button type="button" class="btn btn-success" (click)="salva()">Salva</button>
     </div>
   </ng-template>
 
@@ -109,10 +109,11 @@
           <label>Inserisci cognome </label>
         </div>
         <div class="col-lg-7">
-          <input 
+          <input
           class="form-control input-lg"
           style="margin-bottom: 5px;"
-          placeholder={{mostraUtente.cognome}}/>
+          [(ngModel)]="mostraUtente.cognome"
+          />
         </div>
       </div>
     </div>
@@ -136,10 +137,10 @@
         <label>Nuova Password</label>
       </div>
       <div class="col-lg-7">
-        <input 
+        <input
         class="form-control input-lg"
-        type="password" 
-        [(ngModel)]="modal.password"
+        type="password"
+        [(ngModel)]="mostraUtente.password"
         style="margin-bottom: 5px;"/>
       </div>
     </div>
@@ -148,12 +149,13 @@
         <label>Conferma Password</label>
       </div>
       <div class="col-lg-7">
-        <input 
+        <input
         class="form-control input-lg"
         type="password"
-        [(ngModel)]="modal.confirmPassword" />
+        [(ngModel)]="mostraUtente.confirmPassword" />
       </div>
     </div>
+    <p *ngIf="errorePassword" style="color: red;text-align: left;" >Le due password non coincidono</p>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-success" (click)="salvaPassword()">Salva</button>

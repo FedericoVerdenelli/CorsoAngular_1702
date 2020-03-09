@@ -8,15 +8,15 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CrudService {
-
-  libriUrl = 'http://localhost:3000/libri';
-  utentiUrl = 'http://localhost:3000/Utenti';
+  urlGenerico = 'http://localhost:3000';
+  libriUrl = 'libri';
+  utentiUrl = 'Utenti';
 
   constructor(private httpClient: HttpClient) { }
 
   // GET ALL LIBRI
   Lista(): Observable<any> {
-    return this.httpClient.get(this.libriUrl);
+    return this.httpClient.get(this.urlGenerico + '/' + this.libriUrl);
   }
   // GET BY ID
   // getLibroById(id: number): Libro {
@@ -24,19 +24,19 @@ export class CrudService {
   // }
   // UPDATE LIBRI
   updateLibro(libro: Libro) {
-    this.httpClient.put<Libro>(this.libriUrl + '/' + libro.id, libro).subscribe();
+    this.httpClient.put<Libro>(this.urlGenerico + '/' + this.libriUrl + '/' + libro.id, libro).subscribe();
   }
   // CREATE LIBRI
   createLibro(libro: Libro) {
-  this.httpClient.post(this.libriUrl, libro).subscribe();
+  this.httpClient.post(this.urlGenerico + '/' + this.libriUrl, libro).subscribe();
 }
   // DELETE LIBRI
   deleteLibro(id: number) {
-    this.httpClient.delete(this.libriUrl + '/' + id).subscribe();
+    this.httpClient.delete(this.urlGenerico + '/' + this.libriUrl + '/' + id).subscribe();
   }
   // MODIFICA UTENTE
   updateUtente(utente: UtenteForm){
-    this.httpClient.put<UtenteForm>(this.utentiUrl + '/' + utente.id, utente).subscribe();
+    this.httpClient.put<Libro>(this.urlGenerico + '/' + this.utentiUrl + '/' + utente.login, utente).subscribe();
   }
   // Modifica() {
   //   this.httpClient.put('http://localhost:3000/libri');
@@ -44,6 +44,6 @@ export class CrudService {
 
   // MODIFICA NOME UTENTE
   updateName(user: UtenteForm) {
-    this.httpClient.put<UtenteForm>(this.utentiUrl + '/' + user.id, user).subscribe();
+    this.httpClient.put<UtenteForm>(this.urlGenerico + '/' + this.utentiUrl + '/' + user.id, user).subscribe();
   }
 }
