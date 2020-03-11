@@ -18,6 +18,9 @@ export class NavigationService {
   goToHome() {
     this.router.navigate(['/home']);
   }
+  goToPreferiti() {
+    this.router.navigate(['/preferiti']);
+  }
 }
 
 

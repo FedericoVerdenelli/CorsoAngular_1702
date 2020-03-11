@@ -1,3 +1,4 @@
+import { PreferitiComponent } from './views/preferiti/preferiti.component';
 import { DettaglioUtenteComponent } from './views/utente/dettaglio-utente/dettaglio-utente.component';
 import { CatalogoLibriComponent } from './views/catalogo/catalogo-libri/catalogo-libri.component';
 import { SignupComponent } from './views/auth/signup/signup.component';
@@ -43,6 +44,11 @@ const routes: Routes = [
     path: 'modal-libri',
     pathMatch: 'full',
     component: NgbdModalConfigComponent
+  },
+  {
+    path: 'preferiti',
+    pathMatch: 'full',
+    component: PreferitiComponent
   }
 ];
 
