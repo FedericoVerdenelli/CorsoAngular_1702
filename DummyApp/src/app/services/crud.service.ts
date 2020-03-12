@@ -8,9 +8,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CrudService {
-  urlGenerico = 'http://localhost:3000';
-  libriUrl = 'libri';
-  utentiUrl = 'Utenti';
+  urlGenerico = 'https://biblioteca-app-angular.herokuapp.com';
+  libriUrl = 'libro';
+  utentiUrl = 'utente';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -35,7 +35,7 @@ export class CrudService {
     this.httpClient.delete(this.urlGenerico + '/' + this.libriUrl + '/' + id).subscribe();
   }
   // MODIFICA UTENTE
-  updateUtente(utente: UtenteForm){
+  updateUtente(utente: UtenteForm) {
     this.httpClient.put<Libro>(this.urlGenerico + '/' + this.utentiUrl + '/' + utente.login, utente).subscribe();
   }
   // UTENTE BY ID

@@ -10,6 +10,7 @@
   <table class="table table-hover" style="text-align: center;">
     <thead>
       <tr>
+        <th scope="col">Preferiti</th>
         <th scope="col">Codice</th>
         <th scope="col">Titolo</th>
         <th scope="col">Autore</th>
@@ -21,7 +22,9 @@
     </thead>
     <tbody>
       <tr style="cursor: pointer;" *ngFor="let libro of listaLibri">
-        <th (click)="mostra(libro)" scope="row" style="width: 10%;">{{libro.id}}</th>
+        <th (click)="aggiungiPreferiti(libro)" *ngIf="!preferiti"><i class="far fa-star"></i></th>
+        <th (click)="aggiungiPreferiti(libro)" *ngIf="preferiti"><i class="fas fa-star"></i></th>
+        <td (click)="mostra(libro)" scope="row" style="width: 10%;">{{libro.id}}</td>
         <td (click)="mostra(libro)" style="width: 15%;">{{libro.titolo}}</td>
         <td (click)="mostra(libro)" style="width: 15%;">{{libro.autore}}</td>
         <td (click)="mostra(libro)" style="width: 30%;" *ngIf="!libro.aperto">Clicca per leggere la trama</td>
@@ -128,14 +131,6 @@
         </div>
       </div>
       <div style="margin-top: 5px;">
-        <div class="form-group">
-          <label for="codice">Codice</label>
-          <input  type="text"
-                  class="form-control"
-                  id="codice"
-                  [(ngModel)]="librolibro.id"
-                  [ngModelOptions]="{standalone: true}">
-        </div>
         <div class="form-group">
           <label for="titolo">Titolo</label>
           <input  type="text"

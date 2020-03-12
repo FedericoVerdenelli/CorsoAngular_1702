@@ -26,7 +26,9 @@ class UserAuth  {
   providedIn: 'root'
 })
 export class AuthService {
-
+  urlGenerico = 'https://biblioteca-app-angular.herokuapp.com';
+  libriUrl = 'libro';
+  utentiUrl = 'utente';
   boolenaAuth = false;
   booleanaRegistr = true;
   private loggedInStatus = sessionStorage.getItem('isLogged') || '';
@@ -41,10 +43,10 @@ export class AuthService {
 // CONST RENDE COSTANTE L'INDIRIZZO DI MEMORIA DI RIFERIMENTO, IL CONTENUTO DELLA CELLA DI MEMORIA PUO' CAMBIARE
   signUp(nuovoUtente: SignUpForm) {
     this.booleanaRegistr = true;
-    this.httpClient.get('http://localhost:3000/Utenti').subscribe(listaUte => {
+    this.httpClient.get(this.urlGenerico + '/' + this.utentiUrl).subscribe(listaUte => {
       this.listaUtenti = listaUte;
       this.listaUtenti.forEach(el => {
-        if (el.login === nuovoUtente.login) {
+        if (el.username === nuovoUtente.login) {
           this.booleanaRegistr = false;
           const userAuth = new UserAuth(false);
           this.subject.next(userAuth);
@@ -55,7 +57,7 @@ export class AuthService {
         const userAuth = new UserAuth( true, nuovoUtente);
         sessionStorage.setItem('isLogged', JSON.stringify(nuovoUtente));
         this.subject.next(userAuth);
-        this.httpClient.post('http://localhost:3000/Utenti', nuovoUtente).subscribe();
+        this.httpClient.post(this.urlGenerico + '/' + this.utentiUrl, nuovoUtente).subscribe();
         this.navigation.goToLibreria();
       }
     });
@@ -69,10 +71,10 @@ export class AuthService {
   // CONSULTABILE.
   // SI USA STRINGIFY PERCHE' IL METODO setItem PRENDE COME PARAMETRO DUE STRINGHE
   login(username: string, pass: string) {
-    this.httpClient.get('http://localhost:3000/Utenti').subscribe(listaUte => {
+    this.httpClient.get(this.urlGenerico + '/' + this.utentiUrl).subscribe(listaUte => {
       this.listaUtenti = listaUte;
       this.listaUtenti.forEach(el => {
-        if (el.login === username && el.password === pass) {
+        if (el.username === username && el.password === pass) {
           sessionStorage.setItem('isLogged', JSON.stringify(el));
           const userAuth = new UserAuth(true, el);
           this.subject.next(userAuth);

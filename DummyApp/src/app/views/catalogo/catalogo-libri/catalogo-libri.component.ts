@@ -13,7 +13,7 @@ export class Libro {
   creatore: string;
 
   constructor(
-    id = '',
+    id?,
     titolo = '',
     autore = '',
     trama = '',
@@ -38,6 +38,7 @@ export class Libro {
 })
 export class CatalogoLibriComponent implements OnInit {
   show = false;
+  preferiti = false;
   listaLibri: any = [];
   mostraUtente = JSON.parse(sessionStorage.getItem('isLogged'));
   librolibro: Libro = new Libro();
@@ -92,6 +93,9 @@ export class CatalogoLibriComponent implements OnInit {
     this.crud.createLibro(libro);
     this.modalService.dismissAll();
     window.location.reload();
+  }
+  aggiungiPreferiti(libro) {
+    this.preferiti = !this.preferiti;
   }
   close() {
     this.modalService.dismissAll();
