@@ -1,7 +1,7 @@
 import { UtenteForm } from './../views/utente/dettaglio-utente/dettaglio-utente.component';
 import { Libro } from './../views/catalogo/catalogo-libri/catalogo-libri.component';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -37,6 +37,12 @@ export class CrudService {
   // MODIFICA UTENTE
   updateUtente(utente: UtenteForm){
     this.httpClient.put<Libro>(this.urlGenerico + '/' + this.utentiUrl + '/' + utente.login, utente).subscribe();
+  }
+  // UTENTE BY ID
+  getUtenteById(id: number):Observable<any> {
+    let idUtente = new HttpParams().set('id', JSON.stringify(id));
+    // return this.httpClient.get(this.urlGenerico + '/' + this.utentiUrl + '/', {params:idUtente}); // DA TWEAKARE PER COME HA EMA GLI UTENTI
+    return this.httpClient.get('https://biblioteca-app-angular.herokuapp.com/utente' + '/', {params:idUtente}); // DA TWEAKARE PER COME HA EMA GLI UTENTI
   }
   // Modifica() {
   //   this.httpClient.put('http://localhost:3000/libri');
