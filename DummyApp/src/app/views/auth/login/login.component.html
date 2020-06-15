@@ -27,13 +27,19 @@
           />
         </div>
         <p *ngIf="!booleanaErr" style="color: red;text-align: center;" >Utente o Password sbagliati</p>
-        <div class="col-lg-12" style="margin-bottom: 1vh;">
+        <div *ngIf="!spinner" class="col-lg-12" style="margin-bottom: 1vh;">
           <input
             type="submit"
             value="Login"
             class="btn btn-success btn-block btn-lg "
             (click)="autentication()"
           />
+        </div>
+        <!-- Spinner durante il caricamento del login -->
+        <div class="text-center">
+          <div *ngIf="spinner" class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
         </div>
         <div id="register-link" class="text-right">
           <a routerLink="/sign-up" class="text-info">Register here</a>

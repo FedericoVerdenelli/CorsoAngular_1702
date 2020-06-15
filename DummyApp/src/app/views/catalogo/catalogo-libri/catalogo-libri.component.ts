@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdModalConfigComponent } from '../ngbd-modal-config/ngbd-modal-config.component';
 
-
 export class Libro {
   id: string;
   titolo: string;
@@ -28,6 +27,21 @@ export class Libro {
     this.creatore = creatore;
   }
 }
+export class ListaPreferiti {
+  id: string;
+  libro: Libro;
+  titolo: string;
+
+  constructor(
+    id?,
+    libro?,
+    titolo = '',
+  ) {
+    this.id = id;
+    this.libro = libro;
+    this.titolo = titolo;
+  }
+}
 
 
 
@@ -42,6 +56,9 @@ export class CatalogoLibriComponent implements OnInit {
   listaLibri: any = [];
   mostraUtente = JSON.parse(sessionStorage.getItem('isLogged'));
   librolibro: Libro = new Libro();
+  lista: ListaPreferiti = new ListaPreferiti();
+  prova = new Array();
+  prova2;
   // libro = new Libro('1004', 'z', 'b', 'c', '2000', this.mostraUtente.nome ) ; // libro test da inserire
   constructor(config: NgbModalConfig, private crud: CrudService, private modalService: NgbModal) {
     config.backdrop = 'static';
@@ -56,6 +73,7 @@ export class CatalogoLibriComponent implements OnInit {
     this.crud.Lista().subscribe(lista => {
       lista.forEach( el => {
         el.aperto = false;
+        el.preferito = false;
       });
       this.listaLibri = lista;
     });
@@ -95,7 +113,10 @@ export class CatalogoLibriComponent implements OnInit {
     window.location.reload();
   }
   aggiungiPreferiti(libro) {
-    this.preferiti = !this.preferiti;
+    libro.preferito = !libro.preferito;
+    this.lista.titolo = this.mostraUtente.id;
+    this.prova = this.prova2.push(libro);
+    console.log(this.prova);
   }
   close() {
     this.modalService.dismissAll();

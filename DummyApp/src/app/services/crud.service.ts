@@ -11,6 +11,7 @@ export class CrudService {
   urlGenerico = 'https://biblioteca-app-angular.herokuapp.com';
   libriUrl = 'libro';
   utentiUrl = 'utente';
+  listaUrl = 'lista-libri';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -42,7 +43,7 @@ export class CrudService {
   getUtenteById(id: number):Observable<any> {
     let idUtente = new HttpParams().set('id', JSON.stringify(id));
     // return this.httpClient.get(this.urlGenerico + '/' + this.utentiUrl + '/', {params:idUtente}); // DA TWEAKARE PER COME HA EMA GLI UTENTI
-    return this.httpClient.get('https://biblioteca-app-angular.herokuapp.com/utente' + '/', {params:idUtente}); // DA TWEAKARE PER COME HA EMA GLI UTENTI
+    return this.httpClient.get('https://biblioteca-app-angular.herokuapp.com/utente' + '/', {params: idUtente}); // DA TWEAKARE PER COME HA EMA GLI UTENTI
   }
   // Modifica() {
   //   this.httpClient.put('http://localhost:3000/libri');

@@ -1,4 +1,11 @@
-<div class="col-lg-9" style="margin: auto;">
+<div class="row col-lg-9" style="margin: auto;">
+  <!-- bottone per salvare preferiti-->
+  <div style="padding: 5px; margin-right: 10px;">
+    <i  class="fas fa-save logo"
+        style="cursor: pointer;"
+        (click)="openAggiungi(aggiungiLibroModal)">Salva preferiti
+    </i>
+  </div>
   <!-- bottone per aggiungere libri -->
   <div style="padding: 5px;">
     <i  class="fas fa-book logo"
@@ -22,8 +29,8 @@
     </thead>
     <tbody>
       <tr style="cursor: pointer;" *ngFor="let libro of listaLibri">
-        <th (click)="aggiungiPreferiti(libro)" *ngIf="!preferiti"><i class="far fa-star"></i></th>
-        <th (click)="aggiungiPreferiti(libro)" *ngIf="preferiti"><i class="fas fa-star"></i></th>
+        <th (click)="aggiungiPreferiti(libro)" *ngIf="!libro.preferito"><i class="far fa-star"></i></th>
+        <th (click)="aggiungiPreferiti(libro)" *ngIf="libro.preferito"><i class="fas fa-star"></i></th>
         <td (click)="mostra(libro)" scope="row" style="width: 10%;">{{libro.id}}</td>
         <td (click)="mostra(libro)" style="width: 15%;">{{libro.titolo}}</td>
         <td (click)="mostra(libro)" style="width: 15%;">{{libro.autore}}</td>

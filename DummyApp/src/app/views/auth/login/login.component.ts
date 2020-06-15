@@ -18,12 +18,13 @@ class Login {
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit, OnDestroy { //, OnDestroy
+export class LoginComponent implements OnInit, OnDestroy { // , OnDestroy
   subscription: Subscription;
   myForm: Login = new Login();
   booleanaErr = true;
   hoCliccato = false;
   booUserAuth = true;
+  spinner = false;
   routerSubscription: Subscription;
   constructor(private authService: AuthService, private router: Router) {
     this.routerSubscription = router.events.subscribe((event) => {
@@ -41,13 +42,13 @@ export class LoginComponent implements OnInit, OnDestroy { //, OnDestroy
     this.subscription = this.authService
     .getUserAuth()
     .subscribe(userAuth => {
-      console.log('proprieta di userAuth: '+ userAuth.autenticato);
+      console.log('proprieta di userAuth: ' + userAuth.autenticato);
       this.booUserAuth = userAuth.autenticato;
     });
   }
 
   autentication() {
-
+    this.spinner = true;
     this.authService.login(this.myForm.user, this.myForm.password);
     this.hoCliccato = true;
     if (this.booUserAuth && this.hoCliccato) {
@@ -56,6 +57,7 @@ export class LoginComponent implements OnInit, OnDestroy { //, OnDestroy
     } else {
       this.booleanaErr = false;
       console.log('Condizione di mostra paragrafo' + this.booleanaErr + ' user autenticato else della if  ' + this.booUserAuth);
+      this.spinner = false;
     }
   }
   ngOnDestroy() {
